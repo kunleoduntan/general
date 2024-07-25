@@ -1,0 +1,251 @@
+{
+ "actions": [],
+ "creation": "2024-02-24 15:17:04.748176",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "item_group",
+  "operation",
+  "column_break_3",
+  "do_not_explode",
+  "bom_no",
+  "source_warehouse",
+  "allow_alternative_item",
+  "quantity_and_rate",
+  "qty",
+  "uom",
+  "col_break2",
+  "stock_qty",
+  "stock_uom",
+  "conversion_factor",
+  "rate_amount_section",
+  "rate",
+  "last_purchase_price",
+  "valuation_price",
+  "base_rate",
+  "column_break_21",
+  "amount",
+  "base_amount",
+  "section_break_18",
+  "qty_consumed_per_unit"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Item Code",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link",
+   "options": "Item",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 3,
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "depends_on": "eval:parent.with_operations == 1",
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "label": "Item operation",
+   "options": "Operation"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "do_not_explode",
+   "fieldtype": "Check",
+   "label": "Do Not Explode"
+  },
+  {
+   "depends_on": "eval:!doc.do_not_explode",
+   "fieldname": "bom_no",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "label": "BOM No",
+   "oldfieldname": "bom_no",
+   "oldfieldtype": "Link",
+   "options": "BOM",
+   "print_width": "150px",
+   "search_index": 1,
+   "width": "150px"
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_alternative_item",
+   "fieldtype": "Check",
+   "label": "Allow Alternative Item"
+  },
+  {
+   "fieldname": "quantity_and_rate",
+   "fieldtype": "Section Break",
+   "label": "Quantity and Rate"
+  },
+  {
+   "columns": 2,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "oldfieldname": "qty",
+   "oldfieldtype": "Currency"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item_code.stock_uom",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "col_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stock_qty",
+   "fieldtype": "Float",
+   "label": "Stock Qty",
+   "oldfieldname": "stock_qty",
+   "oldfieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_uom",
+   "fieldtype": "Link",
+   "label": "Stock UOM",
+   "oldfieldname": "stock_uom",
+   "oldfieldtype": "Data",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "conversion_factor",
+   "fieldtype": "Float",
+   "label": "Conversion Factor"
+  },
+  {
+   "fieldname": "rate_amount_section",
+   "fieldtype": "Section Break",
+   "label": "Rate & Amount"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_rate",
+   "fieldtype": "Currency",
+   "label": "Basic Rate (Company Currency)",
+   "options": "Company:company:default_currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "oldfieldname": "amount_as_per_mar",
+   "oldfieldtype": "Currency",
+   "options": "currency",
+   "print_width": "150px",
+   "read_only": 1,
+   "width": "150px"
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Amount (Company Currency)",
+   "options": "Company:company:default_currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qty_consumed_per_unit",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Qty Consumed Per Unit",
+   "oldfieldname": "qty_consumed_per_unit",
+   "oldfieldtype": "Float",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "description": "Last Purchase Price",
+   "fetch_from": "item_code.last_purchase_rate",
+   "fieldname": "last_purchase_price",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Last Purchase Price",
+   "read_only": 1
+  },
+  {
+   "description": "Valuation Price",
+   "fetch_from": "item_code.valuation_rate",
+   "fieldname": "valuation_price",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Valuation Price",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.item_group",
+   "fieldname": "item_group",
+   "fieldtype": "Data",
+   "label": "Item Group"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-06-27 15:58:19.584646",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "BMC Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

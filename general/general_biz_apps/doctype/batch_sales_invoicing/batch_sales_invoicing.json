@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-12-27 21:12:55.374735",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "batch_detail_section",
+  "batch_date",
+  "column_break_nrytw",
+  "naming_series",
+  "column_break_t0jxq",
+  "company",
+  "column_break_em0x",
+  "batch_owner",
+  "post_batch",
+  "transaction_line_section",
+  "transaction_entry",
+  "total_section",
+  "total_amount",
+  "column_break_2h5qr",
+  "total_disc",
+  "column_break_gb3jf",
+  "net_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "batch_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Batch Detail"
+  },
+  {
+   "fieldname": "batch_date",
+   "fieldtype": "Date",
+   "label": "Batch Date"
+  },
+  {
+   "fieldname": "column_break_nrytw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Naming Series",
+   "options": "\nACC-SINV-.YYYY.-"
+  },
+  {
+   "fieldname": "column_break_t0jxq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "batch_owner",
+   "fieldtype": "Link",
+   "label": "Batch Owner",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "post_batch",
+   "fieldtype": "Check",
+   "label": "Post Batch "
+  },
+  {
+   "fieldname": "transaction_line_section",
+   "fieldtype": "Section Break",
+   "label": "Transaction Line"
+  },
+  {
+   "fieldname": "transaction_entry",
+   "fieldtype": "Table",
+   "label": "Transaction Entry",
+   "options": "Med App Item"
+  },
+  {
+   "fieldname": "total_section",
+   "fieldtype": "Section Break",
+   "label": "Total"
+  },
+  {
+   "fieldname": "column_break_2h5qr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gb3jf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Batch Sales Invoicing",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_disc",
+   "fieldtype": "Currency",
+   "label": "Total Disc",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_em0x",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-12-27 22:21:14.474185",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Batch Sales Invoicing",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
+}

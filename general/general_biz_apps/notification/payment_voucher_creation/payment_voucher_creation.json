@@ -1,0 +1,29 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "creation": "2024-07-06 15:38:27.552313",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Payments",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    \n    <style>\n        body {\n            font-family: Arial, sans-serif;\n        }\n        .container {\n            max-width: 600px;\n            margin: 0 auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n            background-color: #e0f7fa;\n        }\n        .header, .footer {\n            text-align: center;\n        }\n        .content p {\n            color: #004d40;\n            margin: 0 0 10px;\n        }\n        table {\n            width: 100%;\n            border-collapse: collapse;\n            margin: 20px 0;\n            background-color: #ffffff;\n        }\n        table, th, td {\n            border: 1px solid #ddd;\n        }\n        th, td {\n            padding: 8px;\n            text-align: left;\n        }\n        th {\n            background-color: #b2dfdb;\n            color: #004d40;\n        }\n        td {\n            color: #00796b;\n        }\n        .highlight {\n            color: #004d40;\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <!-- Header content here if applicable -->\n        </div>\n\n        <div class=\"content\">\n            <p>Greetings,</p>\n\n            <p>This is to notify you that a Payment Voucher has been created <span class=\"highlight\">{{ doc.name }}</span> for referenced Request document <span class=\"highlight\">{{ doc.approval_doc }}</span> by <span class=\"highlight\">{{ doc.owner }}</span> on <span class=\"highlight\">{{ doc.date }}</span>.</p>\n\n            <table>\n                <tr>\n                    <th>Requisition ID</th>\n                    <td>{{ doc.name }}</td>\n                </tr>\n                <tr>\n                    <th>Beneficiary</th>\n                    <td>{{ doc.payee_name }}</td>\n                </tr>\n                <tr>\n                    <th>Department</th>\n                    <td>{{ doc.department }}, {{ doc.cost_center }}</td>\n                </tr>\n                <tr>\n                    <th>Purpose</th>\n                    <td>{{ doc.transaction_purposes }}</td>\n                </tr>\n                <tr>\n                    <th>Trans Currency</th>\n                    <td>{{ doc.payment_currency if doc.payment_currency == \"NGN\" else doc.amount_paid_in_fc }}</td>\n                </tr>\n                <tr>\n                    <th>Exch Rate</th>\n                    <td>{{ doc.exchange_rate if doc.payment_currency != \"NGN\" else 1 }}</td>\n                </tr>\n                <tr>\n                    <th>Trans Ref</th>\n                    <td>{{ doc.reference_no }}</td>\n                </tr>\n                <tr>\n                    <th>Amount</th>\n                    <td>{{ doc.amount_paid }} {{ doc.amount_paid_in_fc }}</td>\n                </tr>\n                <tr>\n                    <th>Amount In Words</th>\n                    <td>{{ doc.amount_in_words }}</td>\n                </tr>\n            </table>\n            <p><b>{{ _(\"A summary of the requisition details can be found on the ERP system: \") }}</b> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</p>\n\n            <p>Kindly processgg immediately.</p>\n\n            <p>Thank you.</p>\n        </div>\n\n        <div class=\"footer\">\n            <!-- Footer content here if applicable -->\n        </div>\n    </div>\n</body>\n</html>\n",
+ "modified": "2024-07-06 16:37:26.430891",
+ "modified_by": "kunleoduntan@gmail.com",
+ "module": "General Biz Apps",
+ "name": "Payment Voucher Creation",
+ "owner": "kunleoduntan@gmail.com",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Notifications",
+ "sender_email": "noreply@thebridgeclinic.com",
+ "subject": "Payment Voucher No: {{ doc.name}} Has Been Created"
+}

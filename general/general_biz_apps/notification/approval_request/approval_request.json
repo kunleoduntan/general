@@ -1,0 +1,27 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "creation": "2024-06-15 21:20:22.474931",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Payment and Purchase Request",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    \r\n    <style>\r\n        body {\r\n            font-family: Arial, sans-serif;\r\n        }\r\n        .container {\r\n            max-width: 600px;\r\n            margin: 0 auto;\r\n            padding: 20px;\r\n            border: 1px solid #ddd;\r\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n            background-color: #e0f7fa;\r\n        }\r\n        .header, .footer {\r\n            text-align: center;\r\n        }\r\n        .content p {\r\n            color: #004d40;\r\n            margin: 0 0 10px;\r\n        }\r\n        table {\r\n            width: 100%;\r\n            border-collapse: collapse;\r\n            margin: 20px 0;\r\n            background-color: #ffffff;\r\n        }\r\n        table, th, td {\r\n            border: 1px solid #ddd;\r\n        }\r\n        th, td {\r\n            padding: 8px;\r\n            text-align: left;\r\n        }\r\n        th {\r\n            background-color: #b2dfdb;\r\n            color: #004d40;\r\n        }\r\n        td {\r\n            color: #00796b;\r\n        }\r\n        .highlight {\r\n            color: #004d40;\r\n            font-weight: bold;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div class=\"container\">\r\n        <div class=\"header\">\r\n            <!-- Header content here if applicable -->\r\n        </div>\r\n\r\n        <div class=\"content\">\r\n            <p>Greetings,</p>\r\n\r\n             <p>This email notification is to inform you about a new requisition form submitted by {{ doc.owner }} on {{ doc.date }}.</p>\r\n\r\n            <table>\r\n                <tr>\r\n                    <th>Requisition ID</th>\r\n                    <td>{{ doc.name }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Beneficiary</th>\r\n                    <td>{{ doc.beneficiary }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Department</th>\r\n                    <td>{{ doc.requesting_department }} </td>\r\n                </tr>\r\n\t\t\t\t\r\n\t\t\t\t <tr>\r\n                    <th>Cost Center</th>\r\n                    <td> {{ doc.cost_center }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Purpose</th>\r\n                    <td>{{ doc.purpose }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Trans Currency</th>\r\n                    <td>{{ doc.currency }}</td>\r\n                </tr>\r\n               \r\n                \r\n                <tr>\r\n                    <th>Amount</th>\r\n                    <td>{{ doc.amount }} </td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Amount In Words</th>\r\n                    <td>{{ doc.amount_in_words }}</td>\r\n                </tr>\r\n            </table>\r\n           <p><b>{{ _(\"A summary of the requisition details can be found on the ERP system: \") }}</b> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</p>\r\n\r\n            <p>Kindly please approve.</p>\r\n\r\n            <p>Thank you.</p>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <!-- Footer content here if applicable -->\r\n        </div>\r\n    </div>\r\n</body>\r\n</html>",
+ "modified": "2024-07-06 15:34:24.248714",
+ "modified_by": "kunleoduntan@gmail.com",
+ "module": "General Biz Apps",
+ "name": "Approval Request",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Accounts Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Approval Request"
+}

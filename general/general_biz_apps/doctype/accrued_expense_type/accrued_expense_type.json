@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:accrued_expense_name",
+ "creation": "2024-07-10 10:21:08.132634",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "payable_to",
+  "accrued_expense_name",
+  "column_break_bpis",
+  "dr_account",
+  "cr_account",
+  "column_break_oqcj",
+  "description",
+  "is_shared_cost",
+  "gross_amount",
+  "is_amortizable"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "accrued_expense_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Accrued Expense Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_bpis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dr_account",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Dr Account",
+   "mandatory_depends_on": "accrued_expense_name",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cr_account",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Cr Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_shared_cost",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Is Shared Cost"
+  },
+  {
+   "fieldname": "column_break_oqcj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payable_to",
+   "fieldtype": "Data",
+   "label": "Payable to ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gross_amount",
+   "fieldtype": "Data",
+   "label": "Gross Amount",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_amortizable",
+   "fieldtype": "Check",
+   "label": "Is Amortizable"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-10 16:32:28.452406",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Accrued Expense Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

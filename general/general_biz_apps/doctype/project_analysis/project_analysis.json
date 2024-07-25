@@ -1,0 +1,308 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-07 15:09:43.523309",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_code",
+  "project_name",
+  "column_break_kobi",
+  "client_name",
+  "client_code",
+  "column_break_bdq9",
+  "project_type",
+  "title",
+  "column_break_fddv",
+  "start_date",
+  "end_date",
+  "profit_and_cost_detail_section",
+  "invoice_value",
+  "column_break_do7w",
+  "cost_to_date",
+  "column_break_jwcw",
+  "income_account",
+  "column_break_plgy",
+  "cost_account",
+  "section_break_xf8c",
+  "percentage_of_recognition",
+  "column_break_3zsy",
+  "income_recognized",
+  "column_break_pkfh",
+  "cost_recognized",
+  "column_break_jidu",
+  "profit_recognized",
+  "to_date_detail_section",
+  "income_recognized_to_date",
+  "percentage_of_recognition_to_date",
+  "column_break_od3l",
+  "cost_recognized_to_date",
+  "total_completed",
+  "column_break_twju",
+  "profit",
+  "margin",
+  "column_break_axa9",
+  "recognition_method"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Title"
+  },
+  {
+   "fetch_from": "project_code.custom_customer_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client Name"
+  },
+  {
+   "fetch_from": "project_code.project_type",
+   "fieldname": "project_type",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Type"
+  },
+  {
+   "fetch_from": "project_code.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "invoice_value",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Invoice Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "profit",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Profit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "margin",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Margin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kobi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bdq9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "profit_and_cost_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Profit and Cost Detail"
+  },
+  {
+   "fieldname": "column_break_twju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_axa9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "label": "Project Code",
+   "options": "Project"
+  },
+  {
+   "fetch_from": "project_code.expected_start_date",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Start Date"
+  },
+  {
+   "fetch_from": "project_code.expected_end_date",
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "End Date"
+  },
+  {
+   "fieldname": "percentage_of_recognition",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "% Recognized"
+  },
+  {
+   "fieldname": "column_break_fddv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cost_to_date",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cost to Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_recognized_to_date",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cost Recogn to Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "percentage_of_recognition_to_date",
+   "fieldtype": "Float",
+   "label": "% Recogn To date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "income_recognized_to_date",
+   "fieldtype": "Currency",
+   "label": "Income Recogn to Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_od3l",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recognition_method",
+   "fieldtype": "Data",
+   "label": "Recognition Method"
+  },
+  {
+   "fieldname": "total_completed",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total % completed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_recognized",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cost Recognized",
+   "read_only": 1
+  },
+  {
+   "fieldname": "income_recognized",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Income Recognized",
+   "read_only": 1
+  },
+  {
+   "fieldname": "to_date_detail_section",
+   "fieldtype": "Section Break",
+   "label": "To Date Detail"
+  },
+  {
+   "fieldname": "column_break_do7w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xf8c",
+   "fieldtype": "Section Break",
+   "label": "Current Recognition"
+  },
+  {
+   "fieldname": "column_break_3zsy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pkfh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jidu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "profit_recognized",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Profit Recognized",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jwcw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "income_account",
+   "fieldtype": "Link",
+   "label": "Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_plgy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cost_account",
+   "fieldtype": "Link",
+   "label": "Cost Account",
+   "options": "Account"
+  },
+  {
+   "fetch_from": "project_code.customer",
+   "fieldname": "client_code",
+   "fieldtype": "Data",
+   "label": "Client Code"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-14 07:05:52.917114",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Project Analysis",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
