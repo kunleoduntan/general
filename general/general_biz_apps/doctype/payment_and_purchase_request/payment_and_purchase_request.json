@@ -42,6 +42,7 @@
   "get_unpaid_invoices",
   "outstanding_purchase_invoices",
   "amount_to_pay",
+  "request_by",
   "amended_from"
  ],
  "fields": [
@@ -256,6 +257,7 @@
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Naming Series"
   },
   {
@@ -279,12 +281,17 @@
    "fieldtype": "Link",
    "label": "Branch",
    "options": "Branch"
+  },
+  {
+   "fieldname": "request_by",
+   "fieldtype": "Data",
+   "label": "Request By"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-17 15:00:03.483354",
+ "modified": "2024-08-13 08:08:04.649956",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Payment and Purchase Request",

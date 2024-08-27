@@ -14,21 +14,22 @@
   "column_break_a3gqx",
   "trans_type",
   "column_break_7fq6f",
+  "payee_id",
   "payee_name",
   "column_break_bxo1t",
-  "payee_id",
+  "supplier_name",
   "naming_series",
   "accounting_and_dimension",
   "branch",
+  "nature_of_expense",
   "column_break_stmx",
   "cost_center",
   "column_break_xwvb",
   "department",
   "column_break_d3fe",
   "project",
-  "project_name",
   "column_break_a0ha",
-  "nature_of_expense",
+  "project_name",
   "section_break_icvsx",
   "payment_currency",
   "customer_id",
@@ -146,7 +147,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Payee ID",
+   "label": "Supplier ID",
    "options": "Supplier"
   },
   {
@@ -449,16 +450,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Payments",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fetch_from": "payee_id.supplier_name",
+   "depends_on": "eval:in_list([\"Expense Payment\", \"Transfer Out\"], doc.trans_type)",
    "fieldname": "payee_name",
    "fieldtype": "Data",
    "label": "Beneficiary"
@@ -645,7 +637,7 @@
    "fieldname": "cashflow_type",
    "fieldtype": "Select",
    "label": "Cashflow Type",
-   "options": "\nPayment to Supplier\nPayment of Tax\nStatutory Payment\nLoan Repayment\nInterest on Loan\nPayment of Operation\nInvestments\nPurchase of Assets\nPayment of Salaries\nPayment IRO Related Company\nFunds Transfer",
+   "options": "\nPayment to Supplier\nReceipt from Customer\nPayment of Tax\nStatutory Payment\nLoan Repayment\nInterest on Loan\nPayment of Operation\nInvestments\nPurchase of Assets\nPayment of Salaries\nPayment IRO Related Company\nFunds Transfer",
    "reqd": 1
   },
   {
@@ -710,12 +702,20 @@
    "fieldname": "project_name",
    "fieldtype": "Data",
    "label": "Project Name"
+  },
+  {
+   "depends_on": "payee_id",
+   "fetch_from": "payee_id.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "mandatory_depends_on": "payee_id"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-19 05:14:49.302095",
+ "modified": "2024-08-11 18:25:46.839136",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Payments",

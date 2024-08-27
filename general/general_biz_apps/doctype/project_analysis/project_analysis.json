@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "project_code",
+  "reporting_date",
   "project_name",
   "column_break_kobi",
   "client_name",
@@ -34,16 +35,23 @@
   "column_break_jidu",
   "profit_recognized",
   "to_date_detail_section",
-  "income_recognized_to_date",
   "percentage_of_recognition_to_date",
+  "column_break_wrbi",
+  "bal_unregconized",
   "column_break_od3l",
-  "cost_recognized_to_date",
-  "total_completed",
+  "income_recognized_to_date",
   "column_break_twju",
-  "profit",
-  "margin",
+  "cost_recognized_to_date",
   "column_break_axa9",
-  "recognition_method"
+  "profit",
+  "section_break_dnqt",
+  "now_bal",
+  "column_break_drmj",
+  "bal_of_unrecognized_income",
+  "column_break_8hqs",
+  "bal_of_unrecognized_cost",
+  "column_break_q7hy",
+  "bal_to_recognize_on_completion"
  ],
  "fields": [
   {
@@ -55,25 +63,24 @@
    "label": "Title"
   },
   {
-   "fetch_from": "project_code.custom_customer_name",
    "fieldname": "client_name",
    "fieldtype": "Data",
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Client Name"
+   "label": "Client Name",
+   "read_only_depends_on": "project_code"
   },
   {
-   "fetch_from": "project_code.project_type",
    "fieldname": "project_type",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Project Type"
+   "label": "Project Type",
+   "options": "Project Type"
   },
   {
-   "fetch_from": "project_code.project_name",
    "fieldname": "project_name",
    "fieldtype": "Data",
    "in_filter": 1,
@@ -88,7 +95,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Invoice Value",
-   "read_only": 1
+   "read_only_depends_on": "project_code"
   },
   {
    "fieldname": "profit",
@@ -97,16 +104,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Profit",
-   "read_only": 1
-  },
-  {
-   "fieldname": "margin",
-   "fieldtype": "Currency",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Margin",
-   "read_only": 1
+   "read_only": 1,
+   "read_only_depends_on": "project_code"
   },
   {
    "fieldname": "column_break_kobi",
@@ -136,21 +135,21 @@
    "options": "Project"
   },
   {
-   "fetch_from": "project_code.expected_start_date",
    "fieldname": "start_date",
    "fieldtype": "Date",
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Start Date"
+   "label": "Start Date",
+   "read_only_depends_on": "project_code"
   },
   {
-   "fetch_from": "project_code.expected_end_date",
    "fieldname": "end_date",
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "End Date"
+   "label": "End Date",
+   "read_only_depends_on": "project_code"
   },
   {
    "fieldname": "percentage_of_recognition",
@@ -158,7 +157,9 @@
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "% Recognized"
+   "label": "% Recognized",
+   "mandatory_depends_on": "invoice_value",
+   "precision": "2"
   },
   {
    "fieldname": "column_break_fddv",
@@ -171,9 +172,10 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Cost to Date",
-   "read_only": 1
+   "read_only_depends_on": "project_code"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "cost_recognized_to_date",
    "fieldtype": "Currency",
    "in_filter": 1,
@@ -183,9 +185,12 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "percentage_of_recognition_to_date",
    "fieldtype": "Float",
    "label": "% Recogn To date",
+   "non_negative": 1,
+   "precision": "2",
    "read_only": 1
   },
   {
@@ -199,27 +204,13 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "recognition_method",
-   "fieldtype": "Data",
-   "label": "Recognition Method"
-  },
-  {
-   "fieldname": "total_completed",
-   "fieldtype": "Float",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Total % completed",
-   "read_only": 1
-  },
-  {
    "fieldname": "cost_recognized",
    "fieldtype": "Currency",
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Cost Recognized",
-   "read_only": 1
+   "read_only_depends_on": "project_code"
   },
   {
    "fieldname": "income_recognized",
@@ -234,7 +225,7 @@
   {
    "fieldname": "to_date_detail_section",
    "fieldtype": "Section Break",
-   "label": "To Date Detail"
+   "label": "Balance Before Current Transaction"
   },
   {
    "fieldname": "column_break_do7w",
@@ -271,32 +262,105 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "project_type.income_account",
    "fieldname": "income_account",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Income Account",
-   "options": "Account"
+   "mandatory_depends_on": "invoice_value"
   },
   {
    "fieldname": "column_break_plgy",
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "project_type.cost_of_sales_account",
    "fieldname": "cost_account",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Cost Account",
-   "options": "Account"
+   "mandatory_depends_on": "invoice_value"
   },
   {
-   "fetch_from": "project_code.customer",
    "fieldname": "client_code",
    "fieldtype": "Data",
    "label": "Client Code"
+  },
+  {
+   "fieldname": "section_break_dnqt",
+   "fieldtype": "Section Break",
+   "label": "Balance After Current Transaction"
+  },
+  {
+   "fieldname": "column_break_drmj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_8hqs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wrbi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "now_bal",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Now % Bal",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bal_unregconized",
+   "fieldtype": "Float",
+   "label": "% Bal Unrecognized",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_q7hy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bal_of_unrecognized_income",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Bal of Unrecognized Income",
+   "read_only": 1,
+   "read_only_depends_on": "project_code"
+  },
+  {
+   "fieldname": "bal_of_unrecognized_cost",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Bal of Unrecognized Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bal_to_recognize_on_completion",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Bal To Recognize on Completion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reporting_date",
+   "fieldtype": "Data",
+   "label": "Reporting Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-14 07:05:52.917114",
+ "modified": "2024-08-14 14:08:41.416126",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Project Analysis",

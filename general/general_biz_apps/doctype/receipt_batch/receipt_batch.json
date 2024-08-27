@@ -15,9 +15,10 @@
   "batch_end_date",
   "column_break_zuuz",
   "bank_account",
-  "month",
+  "bank_gl",
   "column_break_zeug",
   "prepared_by",
+  "month",
   "column_break_bual",
   "cost_center",
   "post_batch",
@@ -179,12 +180,18 @@
    "fieldname": "post_batch",
    "fieldtype": "Check",
    "label": "Post Batch"
+  },
+  {
+   "fetch_from": "bank_account.account",
+   "fieldname": "bank_gl",
+   "fieldtype": "Data",
+   "label": "Bank GL"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-02-27 23:08:08.204280",
+ "modified": "2024-08-19 10:57:51.771367",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Receipt Batch",

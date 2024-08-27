@@ -1,0 +1,333 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-25 16:54:22.024930",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date_created",
+  "shipment_id",
+  "column_break_to0t",
+  "customer_id",
+  "column_break_n2ub",
+  "customer_name",
+  "is_paid",
+  "column_break_2w1b",
+  "item_description",
+  "other_details_section",
+  "customer_type",
+  "departure_service_centre_id",
+  "service_center",
+  "column_break_2uog",
+  "product_type",
+  "business_segment",
+  "gl_account",
+  "column_break_otf9",
+  "business_type",
+  "is_valid",
+  "shipment_details_section",
+  "waybill_no",
+  "destination_service_centre_id",
+  "title",
+  "column_break_sfmx",
+  "receiver_email",
+  "delivery_option_id",
+  "column_break_gx3t",
+  "receiver_phone_number",
+  "user_id",
+  "column_break_ck3q",
+  "receiver_name",
+  "receiver_address",
+  "column_break_lagi",
+  "currency",
+  "column_break_b93x",
+  "exch_rate",
+  "column_break_athr",
+  "rate",
+  "column_break_drah",
+  "approximate_items_weight",
+  "disc_rate",
+  "column_break_cwb1",
+  "total",
+  "vat",
+  "discount",
+  "grand_total",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Waybill",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipment_id",
+   "fieldtype": "Data",
+   "label": "Shipment ID"
+  },
+  {
+   "fieldname": "waybill_no",
+   "fieldtype": "Data",
+   "label": "Waybill No"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "label": "Customer ID",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "departure_service_centre_id",
+   "fieldtype": "Data",
+   "label": "Departure Service Centre ID"
+  },
+  {
+   "fieldname": "destination_service_centre_id",
+   "fieldtype": "Data",
+   "label": "Destination Service Centre ID"
+  },
+  {
+   "fieldname": "receiver_name",
+   "fieldtype": "Data",
+   "label": "Receiver Name"
+  },
+  {
+   "fieldname": "receiver_phone_number",
+   "fieldtype": "Data",
+   "label": "Receiver Phone Number"
+  },
+  {
+   "fieldname": "receiver_email",
+   "fieldtype": "Data",
+   "label": "Receiver Email"
+  },
+  {
+   "fieldname": "receiver_address",
+   "fieldtype": "Small Text",
+   "label": "Receiver Address"
+  },
+  {
+   "fieldname": "delivery_option_id",
+   "fieldtype": "Data",
+   "label": "Delivery Option ID"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "exch_rate",
+   "fieldtype": "Float",
+   "label": "Exch Rate"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "User ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vat",
+   "fieldtype": "Float",
+   "label": "VAT"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "date_created",
+   "fieldtype": "Date",
+   "label": "Date Created"
+  },
+  {
+   "fieldname": "item_description",
+   "fieldtype": "Small Text",
+   "label": "Item Description"
+  },
+  {
+   "fieldname": "approximate_items_weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "shipment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Shipment Details"
+  },
+  {
+   "fieldname": "column_break_sfmx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gx3t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lagi",
+   "fieldtype": "Section Break",
+   "label": "Monetary"
+  },
+  {
+   "fieldname": "column_break_ck3q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_2uog",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_otf9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Segmentation"
+  },
+  {
+   "fieldname": "column_break_b93x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_athr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_drah",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cwb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "column_break_to0t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_n2ub",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_2w1b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "disc_rate",
+   "fieldtype": "Float",
+   "label": "Disc Rate"
+  },
+  {
+   "fieldname": "product_type",
+   "fieldtype": "Link",
+   "label": "Product Type",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "is_paid",
+   "fieldtype": "Select",
+   "label": "Is Paid",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fetch_from": "customer_id.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "label": "Customer Type",
+   "options": "\nEcommerce\nIndividualCustomer\nCorporate"
+  },
+  {
+   "fieldname": "business_type",
+   "fieldtype": "Select",
+   "label": "Business Type",
+   "options": "\nLocal\nInternational"
+  },
+  {
+   "fieldname": "is_valid",
+   "fieldtype": "Select",
+   "label": "Is Valid",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "service_center",
+   "fieldtype": "Link",
+   "label": "Service Center",
+   "options": "Cost Center"
+  },
+  {
+   "fetch_from": "product_type.item_group_name",
+   "fieldname": "gl_account",
+   "fieldtype": "Data",
+   "label": "GL Account"
+  },
+  {
+   "fieldname": "business_segment",
+   "fieldtype": "Select",
+   "label": "Business Segment",
+   "options": "\nBasic\nClassic\nEnterprise Merchant"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-27 17:00:33.485056",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Waybill",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

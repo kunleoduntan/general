@@ -26,6 +26,7 @@
   "inflow",
   "column_break_7mtl",
   "outflow",
+  "supplier_nam",
   "foreign_currency_section",
   "amount_in_fc",
   "column_break_jrt2",
@@ -419,12 +420,21 @@
   {
    "fieldname": "column_break_ki86",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier_nam",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-18 20:06:16.419380",
+ "modified": "2024-08-12 14:54:23.480111",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Transaction Entry",

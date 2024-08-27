@@ -130,6 +130,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:in_list([\"Receive from Registered\", \"Receive from One-Off\", \"Customer Refund\"], doc.customer_type)",
    "fieldname": "customer_id",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -142,7 +143,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.customer_type != 'Revenue Receipting'",
+   "depends_on": "customer_id",
    "fetch_from": "customer_id.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
@@ -294,13 +295,13 @@
    "label": "Amount In Words"
   },
   {
-   "depends_on": "amortise ",
+   "depends_on": "eval:doc.amortize == 1",
    "fieldname": "amortization_settings_section",
    "fieldtype": "Section Break",
-   "label": "Amortization Settings",
-   "mandatory_depends_on": "eval:doc.amortise == 1"
+   "label": "Amortization Settings"
   },
   {
+   "depends_on": "eval:doc.amortize == 1",
    "fieldname": "frequency",
    "fieldtype": "Select",
    "in_filter": 1,
@@ -525,15 +526,6 @@
    "label": "Referenced Doc No"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Receipts",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "fieldname": "schedule_tab",
    "fieldtype": "Tab Break",
    "label": "Schedule"
@@ -579,7 +571,7 @@
    "link_fieldname": "customer_name"
   }
  ],
- "modified": "2024-06-17 20:02:00.406494",
+ "modified": "2024-08-05 15:42:44.555666",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Receipts",

@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "maintenance_section",
+  "series",
   "title",
   "date",
   "type_of_maintenance",
@@ -16,18 +17,23 @@
   "asset_description",
   "column_break_yuld",
   "maintenance_detail",
-  "column_break_6bwr",
-  "requesting_department",
-  "cost_center",
-  "last_repair_date",
-  "priority",
-  "column_break_fn9e",
-  "status",
   "supplier_id",
   "supplier_name",
+  "priority",
+  "column_break_6bwr",
+  "status",
   "days_until_next_service",
   "next_due_date",
+  "last_repair_date",
   "estimated_cost",
+  "dimension_section",
+  "branch",
+  "column_break_cetw",
+  "cost_center",
+  "column_break_fn9e",
+  "requesting_department",
+  "column_break_kprp",
+  "project",
   "section_break_i9ut",
   "items",
   "section_break_f7cd",
@@ -38,6 +44,7 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Title",
    "read_only": 1
   },
@@ -85,7 +92,7 @@
   {
    "fieldname": "maintenance_section",
    "fieldtype": "Section Break",
-   "label": "Maintenance "
+   "label": "Maintenance"
   },
   {
    "fieldname": "column_break_6bwr",
@@ -140,8 +147,10 @@
    "read_only": 1
   },
   {
+   "depends_on": "is_multiple_assets",
    "fieldname": "section_break_i9ut",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Item List"
   },
   {
    "default": "0",
@@ -157,6 +166,7 @@
    "options": "Maintenance Request List"
   },
   {
+   "depends_on": "is_multiple_assets",
    "fieldname": "section_break_f7cd",
    "fieldtype": "Section Break"
   },
@@ -191,12 +201,43 @@
    "fieldtype": "Select",
    "label": "Priority",
    "options": "\nHigh\nMedium\nCan't Wait\nLow"
+  },
+  {
+   "fieldname": "series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "dimension_section",
+   "fieldtype": "Section Break",
+   "label": "Dimension"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "column_break_cetw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_kprp",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-02-15 14:45:32.952809",
+ "modified": "2024-08-13 09:44:58.650733",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Maintenance Request",

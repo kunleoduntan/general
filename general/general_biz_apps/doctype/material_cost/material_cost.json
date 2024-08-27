@@ -10,10 +10,7 @@
   "item_code",
   "item_name",
   "item_group",
-  "operation",
   "column_break_3",
-  "do_not_explode",
-  "bom_no",
   "source_warehouse",
   "allow_alternative_item",
   "section_break_5",
@@ -23,25 +20,15 @@
   "image_view",
   "quantity_and_rate",
   "qty",
+  "conversion_factor",
   "uom",
   "col_break2",
   "stock_qty",
   "stock_uom",
-  "conversion_factor",
   "rate_amount_section",
-  "rate",
   "base_rate",
   "column_break_21",
-  "amount",
-  "base_amount",
-  "section_break_18",
-  "qty_consumed_per_unit",
-  "section_break_27",
-  "has_variants",
-  "include_item_in_manufacturing",
-  "original_item",
-  "column_break_33",
-  "sourced_by_supplier"
+  "amount"
  ],
  "fields": [
   {
@@ -65,34 +52,8 @@
    "label": "Item Name"
   },
   {
-   "depends_on": "eval:parent.with_operations == 1",
-   "fieldname": "operation",
-   "fieldtype": "Link",
-   "label": "Item operation",
-   "options": "Operation"
-  },
-  {
    "fieldname": "column_break_3",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "do_not_explode",
-   "fieldtype": "Check",
-   "label": "Do Not Explode"
-  },
-  {
-   "depends_on": "eval:!doc.do_not_explode",
-   "fieldname": "bom_no",
-   "fieldtype": "Link",
-   "in_filter": 1,
-   "label": "BOM No",
-   "oldfieldname": "bom_no",
-   "oldfieldtype": "Link",
-   "options": "BOM",
-   "print_width": "150px",
-   "search_index": 1,
-   "width": "150px"
   },
   {
    "fieldname": "source_warehouse",
@@ -193,19 +154,9 @@
    "label": "Rate & Amount"
   },
   {
-   "fetch_from": "item_code.valuation_rate",
-   "fieldname": "rate",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Rate",
-   "options": "currency",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
    "fieldname": "base_rate",
    "fieldtype": "Currency",
-   "label": "Basic Rate (Company Currency)",
+   "label": "Cost Price",
    "options": "Company:company:default_currency",
    "print_hide": 1,
    "read_only": 1
@@ -227,67 +178,6 @@
    "width": "150px"
   },
   {
-   "fieldname": "base_amount",
-   "fieldtype": "Currency",
-   "label": "Amount (Company Currency)",
-   "options": "Company:company:default_currency",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_18",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "qty_consumed_per_unit",
-   "fieldtype": "Float",
-   "hidden": 1,
-   "label": "Qty Consumed Per Unit",
-   "oldfieldname": "qty_consumed_per_unit",
-   "oldfieldtype": "Float",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_27",
-   "fieldtype": "Section Break"
-  },
-  {
-   "default": "0",
-   "fetch_from": "item_code.has_variants",
-   "fieldname": "has_variants",
-   "fieldtype": "Check",
-   "label": "Has Variants",
-   "no_copy": 1,
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fetch_from": "item_code.include_item_in_manufacturing",
-   "fieldname": "include_item_in_manufacturing",
-   "fieldtype": "Check",
-   "label": "Include Item In Manufacturing"
-  },
-  {
-   "fieldname": "original_item",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Original Item",
-   "options": "Item",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_33",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "sourced_by_supplier",
-   "fieldtype": "Check",
-   "label": "Sourced by Supplier"
-  },
-  {
    "fetch_from": "item_code.item_group",
    "fieldname": "item_group",
    "fieldtype": "Data",
@@ -297,7 +187,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-27 16:00:33.789782",
+ "modified": "2024-08-03 21:47:10.718421",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Material Cost",

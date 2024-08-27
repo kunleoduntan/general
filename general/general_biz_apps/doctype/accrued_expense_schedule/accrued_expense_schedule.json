@@ -7,21 +7,22 @@
  "engine": "InnoDB",
  "field_order": [
   "payable_to",
-  "accrued_expense_type",
-  "posting_date",
+  "frequency",
+  "next_posting_date",
   "column_break_hvnm",
+  "posting_date",
   "start_date",
+  "no_of_periods",
+  "next_schedule",
+  "column_break_td1r",
   "trans_type",
   "option",
-  "column_break_td1r",
-  "end_date",
-  "next_posting_date",
-  "next_schedule",
   "column_break_bcqp",
-  "frequency",
-  "no_of_periods",
+  "accrued_expense_type",
+  "end_date",
   "title",
   "detail_section",
+  "charge_wht",
   "description",
   "monetary_section",
   "gross_amount",
@@ -30,12 +31,11 @@
   "exch_rate",
   "currency",
   "column_break_0hro",
-  "charge_wht",
   "wht_rate",
   "wh_tax",
   "column_break_2qj6",
-  "periodic_charge",
   "net_amount",
+  "periodic_charge",
   "accounting_section",
   "dr_account",
   "column_break_wsfd",
@@ -58,7 +58,8 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title"
+   "label": "Title",
+   "read_only": 1
   },
   {
    "fieldname": "accrued_expense_type",
@@ -75,6 +76,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "fieldname": "start_date",
    "fieldtype": "Date",
    "in_filter": 1,
@@ -84,19 +86,22 @@
    "label": "Start Date"
   },
   {
+   "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "fieldname": "end_date",
    "fieldtype": "Date",
    "in_filter": 1,
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "End Date"
+   "label": "End Date",
+   "read_only_depends_on": "frequency"
   },
   {
    "fieldname": "column_break_2qj6",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "fieldname": "frequency",
    "fieldtype": "Select",
    "in_filter": 1,
@@ -104,7 +109,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Frequency",
-   "options": "\nMonthly\nWeekly\nQuarterly\nHalf-Yearly\nYearly\nNA"
+   "options": "\nMonthly\nWeekly\nQuarterly\nHalf-Yearly\nYearly\nFreehand\nNA"
   },
   {
    "fieldname": "column_break_u086",
@@ -118,9 +123,12 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Gross Amount"
+   "label": "Gross Amount",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
+   "description": "Expense Account",
    "fetch_from": "accrued_expense_type.dr_account",
    "fieldname": "dr_account",
    "fieldtype": "Link",
@@ -129,9 +137,11 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Dr Account",
-   "options": "Account"
+   "options": "Account",
+   "reqd": 1
   },
   {
+   "description": "Liability Account",
    "fetch_from": "accrued_expense_type.cr_account",
    "fieldname": "cr_account",
    "fieldtype": "Link",
@@ -140,7 +150,8 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Cr Account",
-   "options": "Account"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -165,21 +176,27 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "WH Tax"
+   "label": "WH Tax",
+   "mandatory_depends_on": "gross_amount",
+   "read_only": 1
   },
   {
+   "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "fieldname": "periodic_charge",
    "fieldtype": "Currency",
    "in_filter": 1,
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Periodic Charge"
+   "label": "Periodic Charge",
+   "read_only": 1
   },
   {
    "fieldname": "lc_amount",
    "fieldtype": "Currency",
-   "label": "LC Amount"
+   "label": "LC Amount",
+   "read_only": 1,
+   "read_only_depends_on": "gross_amount"
   },
   {
    "fieldname": "accounting_section",
@@ -259,7 +276,8 @@
    "fieldname": "currency",
    "fieldtype": "Link",
    "label": "Currency",
-   "options": "Currency"
+   "options": "Currency",
+   "read_only_depends_on": "gross_amount"
   },
   {
    "fetch_from": "project.project_name",
@@ -275,16 +293,20 @@
    "label": "Posting Date"
   },
   {
+   "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "fieldname": "no_of_periods",
    "fieldtype": "Int",
-   "label": "No of Periods"
+   "label": "No of Months",
+   "mandatory_depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
+   "read_only_depends_on": "eval: doc.frequency != 'Freehand'"
   },
   {
+   "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
+   "description": "For Mth=1 ,Qtr=3 ,Hy=6, Yr=12",
    "fieldname": "next_schedule",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Next Schedule",
-   "read_only": 1
+   "label": "Next Schedule"
   },
   {
    "fieldname": "wht_rate",
@@ -294,15 +316,18 @@
   {
    "fieldname": "net_amount",
    "fieldtype": "Currency",
-   "label": "Net Amount"
+   "label": "Net Amount",
+   "read_only": 1
   },
   {
+   "description": "1 = Accruals and Prepayment\n2 = Accruals Only",
    "fieldname": "trans_type",
    "fieldtype": "Select",
    "label": "Trans Type",
-   "options": "\nPRE-ACC\nACCRUAL"
+   "options": "\nACCRUAL & PREPAY\nACCRUAL"
   },
   {
+   "depends_on": "trans_type",
    "fieldname": "option",
    "fieldtype": "Select",
    "label": "Option",
@@ -310,9 +335,11 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "fieldname": "deferred_expense_account",
    "fieldtype": "Link",
-   "label": "Deferred Expense Account",
+   "label": "Deferred Expense Acct",
+   "mandatory_depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "options": "Account"
   },
   {
@@ -321,15 +348,18 @@
    "fieldtype": "Small Text",
    "in_list_view": 1,
    "label": "Description",
-   "mandatory_depends_on": "trans_type"
+   "mandatory_depends_on": "trans_type",
+   "max_height": "400px"
   },
   {
+   "description": "Withholding Tax ",
    "fieldname": "wht_account",
    "fieldtype": "Link",
    "label": "WHT Account",
    "options": "Account"
   },
   {
+   "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "fieldname": "next_posting_date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -355,7 +385,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-24 15:06:50.084759",
+ "modified": "2024-08-15 12:49:30.118001",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Accrued Expense Schedule",
