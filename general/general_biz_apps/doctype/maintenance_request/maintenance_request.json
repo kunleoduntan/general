@@ -14,18 +14,20 @@
   "type_of_maintenance",
   "is_multiple_assets",
   "asset_code",
-  "asset_description",
+  "identification_number",
   "column_break_yuld",
-  "maintenance_detail",
   "supplier_id",
   "supplier_name",
+  "asset_description",
   "priority",
   "column_break_6bwr",
   "status",
   "days_until_next_service",
   "next_due_date",
   "last_repair_date",
+  "column_break_6s3o",
   "estimated_cost",
+  "maintenance_detail",
   "dimension_section",
   "branch",
   "column_break_cetw",
@@ -232,12 +234,21 @@
   {
    "fieldname": "column_break_kprp",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "identification_number",
+   "fieldtype": "Data",
+   "label": "Identification Number"
+  },
+  {
+   "fieldname": "column_break_6s3o",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-13 09:44:58.650733",
+ "modified": "2024-09-25 14:17:22.156063",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Maintenance Request",

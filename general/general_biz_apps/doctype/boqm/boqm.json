@@ -1,0 +1,423 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2024-10-14 07:26:09.771421",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date_prepared",
+  "project_code",
+  "project_name",
+  "column_break_ftvz",
+  "client_name",
+  "external_ref",
+  "price_basis",
+  "currency",
+  "column_break_s47f",
+  "job_description",
+  "title",
+  "materials_section",
+  "items",
+  "amended_from",
+  "details_section",
+  "cost_of_materials",
+  "column_break_gov7",
+  "remark",
+  "tab_break_sgvu",
+  "boq_smart_door_access_control_section",
+  "smart_door_access_control",
+  "total_smart_door_access_control",
+  "boq_amazon_alexa_voice_control_section",
+  "amazon_alexa_voice_control",
+  "total_amazon_alexa_voice_control",
+  "boq_ir_remote_integration_section",
+  "ir_remote_integration",
+  "total_ir_remote_integration",
+  "boq_appliance_control_section",
+  "appliance_control",
+  "total_appliance_control",
+  "boq_sensors_section",
+  "sensors",
+  "total_sensors",
+  "boq_smart_lighting_and_ac_control_section",
+  "smart_lighting_and_ac_control",
+  "total_smart_lighting_and_ac_control",
+  "boq_smart_home_audio_control_section",
+  "smart_home_audio_control",
+  "total_smart_home_audio_control",
+  "boq_catv_system_section",
+  "catv_system",
+  "total_catv_system",
+  "boq_communication_system_section",
+  "communication_system",
+  "total_communication_system",
+  "boq_fire_alarm_system_section",
+  "fire_alarm_system",
+  "total_fire_alarm_system",
+  "boq_cctv_system_section",
+  "cctv_system",
+  "total_cctv_system"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project Code",
+   "options": "Project",
+   "unique": 1
+  },
+  {
+   "fetch_from": "project_code.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "column_break_ftvz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "project_code.custom_customer_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "service_code.external_item_no",
+   "fieldname": "external_ref",
+   "fieldtype": "Data",
+   "label": "External Ref"
+  },
+  {
+   "fieldname": "column_break_s47f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "price_basis",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Price Basis",
+   "options": "\nLast Purchased Price\nValuation Price"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "materials_section",
+   "fieldtype": "Section Break",
+   "label": "Materials"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "BMC Item"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Bill of Material Consume",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "cost_of_materials",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Cost of Materials"
+  },
+  {
+   "fieldname": "column_break_gov7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "tab_break_sgvu",
+   "fieldtype": "Tab Break",
+   "label": "Material Detail"
+  },
+  {
+   "fieldname": "boq_smart_door_access_control_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ Smart Door Access Control"
+  },
+  {
+   "fieldname": "boq_amazon_alexa_voice_control_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ Amazon Alexa Voice Control"
+  },
+  {
+   "fieldname": "boq_ir_remote_integration_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ IR Remote Integration"
+  },
+  {
+   "fieldname": "boq_appliance_control_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ Appliance Control"
+  },
+  {
+   "fieldname": "boq_sensors_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ Sensors"
+  },
+  {
+   "fieldname": "boq_smart_lighting_and_ac_control_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ Smart Lighting and AC Control"
+  },
+  {
+   "fieldname": "boq_smart_home_audio_control_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ Smart Home Audio Control"
+  },
+  {
+   "fieldname": "boq_catv_system_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ CATV System"
+  },
+  {
+   "fieldname": "boq_communication_system_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ Communication System"
+  },
+  {
+   "fieldname": "boq_fire_alarm_system_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ Fire Alarm System"
+  },
+  {
+   "fieldname": "boq_cctv_system_section",
+   "fieldtype": "Section Break",
+   "label": "BOQ CCTV System"
+  },
+  {
+   "fieldname": "smart_door_access_control",
+   "fieldtype": "Table",
+   "label": "Smart Door Access Control",
+   "options": "BOQ Smart Door Access Control"
+  },
+  {
+   "fieldname": "amazon_alexa_voice_control",
+   "fieldtype": "Table",
+   "label": "Amazon Alexa Voice Control",
+   "options": "BOQ Amazon Alexa Voice Control"
+  },
+  {
+   "fieldname": "ir_remote_integration",
+   "fieldtype": "Table",
+   "label": "IR Remote Integration",
+   "options": "BOQ IR Remote Integration"
+  },
+  {
+   "fieldname": "appliance_control",
+   "fieldtype": "Table",
+   "label": "Appliance Control",
+   "options": "BOQ Appliance Control"
+  },
+  {
+   "fieldname": "sensors",
+   "fieldtype": "Table",
+   "label": "Sensors",
+   "options": "BOQ Sensors"
+  },
+  {
+   "fieldname": "smart_lighting_and_ac_control",
+   "fieldtype": "Table",
+   "label": "Smart Lighting and AC Control",
+   "options": "BOQ Smart Lighting and AC Control"
+  },
+  {
+   "fieldname": "smart_home_audio_control",
+   "fieldtype": "Table",
+   "label": "Smart Home Audio Control",
+   "options": "BOQ Smart Home Audio Control"
+  },
+  {
+   "fieldname": "catv_system",
+   "fieldtype": "Table",
+   "label": "CATV System",
+   "options": "BOQ CATV System"
+  },
+  {
+   "fieldname": "communication_system",
+   "fieldtype": "Table",
+   "label": "Communication System",
+   "options": "BOQ Communication System"
+  },
+  {
+   "fieldname": "fire_alarm_system",
+   "fieldtype": "Table",
+   "label": "Fire Alarm System",
+   "options": "BOQ Fire Alarm System"
+  },
+  {
+   "fieldname": "cctv_system",
+   "fieldtype": "Table",
+   "label": "CCTV System",
+   "options": "BOQ CCTV System"
+  },
+  {
+   "fieldname": "total_ir_remote_integration",
+   "fieldtype": "Float",
+   "label": "Total IR Remote Integration",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_cctv_system",
+   "fieldtype": "Float",
+   "label": "Total  CCTV System",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_smart_door_access_control",
+   "fieldtype": "Float",
+   "label": "Total  Smart Door Access Control",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_amazon_alexa_voice_control",
+   "fieldtype": "Float",
+   "label": "Total  Amazon Alexa Voice Control",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_appliance_control",
+   "fieldtype": "Float",
+   "label": "Total Appliance Control",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_sensors",
+   "fieldtype": "Float",
+   "label": "Total  Sensors",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_smart_lighting_and_ac_control",
+   "fieldtype": "Float",
+   "label": "Total  Smart Lighting and AC Control",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_smart_home_audio_control",
+   "fieldtype": "Float",
+   "label": "Total  Smart Home Audio Control"
+  },
+  {
+   "fieldname": "total_catv_system",
+   "fieldtype": "Float",
+   "label": "Total CATV System",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_communication_system",
+   "fieldtype": "Float",
+   "label": "Total  Communication System",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_fire_alarm_system",
+   "fieldtype": "Float",
+   "label": "Total  Fire Alarm System",
+   "precision": "2"
+  },
+  {
+   "fieldname": "date_prepared",
+   "fieldtype": "Date",
+   "label": "Date Prepared"
+  },
+  {
+   "fieldname": "job_description",
+   "fieldtype": "Small Text",
+   "label": "Job Description"
+  },
+  {
+   "default": "NGN",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Currency",
+   "options": "Currency"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-18 08:01:04.670677",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "BOQM",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "project_name",
+ "show_preview_popup": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "project_name",
+ "track_changes": 1
+}

@@ -33,20 +33,20 @@
   "amount_in_lc",
   "column_break_ki86",
   "balance",
+  "amortise",
   "cost_classifications_section",
   "cost_center",
-  "nature_of_expense",
+  "service_center",
+  "branch",
   "column_break_peoy",
+  "nature_of_expense",
+  "department",
+  "column_break_pmno",
   "project",
   "project_name",
-  "column_break_pmno",
-  "department",
-  "branch",
   "column_break_wg5o",
   "customer_id",
   "customer_name",
-  "column_break_4hbb",
-  "amortise",
   "amortization_settings_section",
   "frequency",
   "start_date",
@@ -348,10 +348,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_4hbb",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "nature_of_expense",
    "fieldtype": "Select",
    "label": "Nature of Expenze",
@@ -408,7 +404,7 @@
   {
    "fieldname": "branch",
    "fieldtype": "Link",
-   "label": "Branch",
+   "label": "Region",
    "options": "Branch"
   },
   {
@@ -429,12 +425,19 @@
    "in_standard_filter": 1,
    "label": "Supplier Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "service_center",
+   "fieldtype": "Link",
+   "label": "Service Center",
+   "options": "Service Center",
+   "read_only_depends_on": "cost_center"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-12 14:54:23.480111",
+ "modified": "2024-10-05 11:28:32.413061",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Transaction Entry",

@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-16 15:43:55.064052",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bkdm",
+  "date_created",
+  "column_break_6l7w",
+  "shipment_id",
+  "column_break_ccw0",
+  "waybill_no",
+  "column_break_rz8c",
+  "grand_total",
+  "column_break_hcqj",
+  "status",
+  "waybill"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_bkdm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date_created",
+   "fieldtype": "Date",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Date Created",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6l7w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipment_id",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Shipment ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ccw0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "waybill_no",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Waybill No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rz8c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Grand Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hcqj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "waybill",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Waybill",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-17 05:14:44.639650",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Waybill Reconciliation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

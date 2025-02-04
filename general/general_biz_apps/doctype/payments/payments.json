@@ -11,6 +11,7 @@
  "field_order": [
   "transaction_detail_section",
   "transaction_date",
+  "title",
   "column_break_a3gqx",
   "trans_type",
   "column_break_7fq6f",
@@ -20,15 +21,13 @@
   "supplier_name",
   "naming_series",
   "accounting_and_dimension",
-  "branch",
-  "nature_of_expense",
-  "column_break_stmx",
   "cost_center",
+  "column_break_stmx",
+  "branch",
   "column_break_xwvb",
   "department",
   "column_break_d3fe",
   "project",
-  "column_break_a0ha",
   "project_name",
   "section_break_icvsx",
   "payment_currency",
@@ -40,7 +39,6 @@
   "company",
   "column_break_kbrd",
   "create_accounting_entries",
-  "apply_withholding_tax",
   "amortize",
   "is_multi_line",
   "is_shared_cost",
@@ -49,10 +47,10 @@
   "amount_paid_in_fc",
   "mode_of_payment",
   "column_break_ynk5s",
+  "transaction_purposes",
+  "column_break_e1fvs",
   "reference_no",
   "account_to_debit",
-  "column_break_e1fvs",
-  "transaction_purposes",
   "column_break_wkuqa",
   "amount_in_words",
   "amortization_parameter_section",
@@ -92,7 +90,7 @@
   "name_of_approver",
   "column_break_uwdf",
   "app_date",
-  "accounting_tab",
+  "bank_detail_tab",
   "banking_detail_section",
   "remittance_bank",
   "remittance_bank_gl",
@@ -189,12 +187,6 @@
    "label": "Create Accounting Entries"
   },
   {
-   "default": "0",
-   "fieldname": "apply_withholding_tax",
-   "fieldtype": "Check",
-   "label": "Apply Withholding tax"
-  },
-  {
    "fieldname": "column_break_ynk5s",
    "fieldtype": "Column Break"
   },
@@ -249,7 +241,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Cheque / Ref No",
-   "length": 8,
+   "length": 15,
    "mandatory_depends_on": "\r\n",
    "reqd": 1
   },
@@ -359,6 +351,7 @@
    "depends_on": "apply_withholding_tax",
    "fieldname": "section_break_r9iee",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Withholding tax",
    "mandatory_depends_on": "apply_withholding_tax"
   },
@@ -401,11 +394,6 @@
    "fieldtype": "Link",
    "label": "Issued By",
    "options": "User"
-  },
-  {
-   "fieldname": "accounting_tab",
-   "fieldtype": "Tab Break",
-   "label": "Accounting"
   },
   {
    "fieldname": "banking_detail_section",
@@ -456,15 +444,16 @@
    "label": "Beneficiary"
   },
   {
-   "depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\"",
+   "depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\" || doc.is_multi_line != 1",
    "description": "Enter Expense Ac. if payment is not amortised else enter Deferred Expense Account",
    "fieldname": "account_to_debit",
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Account To Debit",
-   "mandatory_depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\"",
-   "options": "Account"
+   "mandatory_depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\" ",
+   "options": "Account",
+   "read_only_depends_on": "is_multi_line"
   },
   {
    "fieldname": "naming_series",
@@ -567,14 +556,6 @@
    "label": "Name of Approver"
   },
   {
-   "depends_on": "eval: doc.trans_type == \"Expense Payment\"",
-   "fieldname": "nature_of_expense",
-   "fieldtype": "Select",
-   "label": "Nature of Expense",
-   "mandatory_depends_on": "eval: doc.trans_type == \"Expense Payment\"",
-   "options": "\nInternal\nFor Customer"
-  },
-  {
    "fieldname": "department",
    "fieldtype": "Link",
    "label": "Department",
@@ -611,7 +592,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "collapsible": 1,
    "fieldname": "multi_line_transactions_section",
    "fieldtype": "Section Break",
    "label": "Multi Line Transactions"
@@ -624,6 +604,7 @@
   },
   {
    "default": "0",
+   "depends_on": "eval:doc.trans_type == 'Expense Payment'",
    "fieldname": "is_multi_line",
    "fieldtype": "Check",
    "label": "Is Multi Line"
@@ -653,6 +634,7 @@
   },
   {
    "default": "0",
+   "depends_on": "eval:doc.trans_type == 'Expense Payment'",
    "fieldname": "is_shared_cost",
    "fieldtype": "Check",
    "label": "Is Shared Cost"
@@ -670,10 +652,11 @@
    "read_only": 1
   },
   {
+   "fetch_from": "cost_center.region_name",
    "fieldname": "branch",
-   "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch"
+   "fieldtype": "Data",
+   "label": "Region",
+   "read_only_depends_on": "cost_center"
   },
   {
    "collapsible": 1,
@@ -694,10 +677,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_a0ha",
-   "fieldtype": "Column Break"
-  },
-  {
    "fetch_from": "project.project_name",
    "fieldname": "project_name",
    "fieldtype": "Data",
@@ -710,12 +689,23 @@
    "fieldtype": "Data",
    "label": "Supplier Name",
    "mandatory_depends_on": "payee_id"
+  },
+  {
+   "fieldname": "bank_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bank Detail"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-11 18:25:46.839136",
+ "modified": "2024-12-27 11:51:46.027307",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Payments",

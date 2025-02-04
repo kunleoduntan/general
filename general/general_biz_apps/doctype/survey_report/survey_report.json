@@ -1,0 +1,370 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-17 14:21:13.622224",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "report_date",
+  "customer_id",
+  "customer_name",
+  "column_break_u8aj",
+  "project_code",
+  "project_name",
+  "column_break_pd1p",
+  "estimated_start_date",
+  "estimated_end_date",
+  "column_break_ivrc",
+  "subject_of_report",
+  "report_details_section",
+  "template_for_survey_scope",
+  "scope_of_survey",
+  "table_of_content_section",
+  "template_for_table_of_content",
+  "table_of_content",
+  "executive_summary_section",
+  "template_for_executive_summary",
+  "executive_summary",
+  "requirement_tab",
+  "requirements_section",
+  "section_title",
+  "material",
+  "requirements_x1_section",
+  "section_title_x1",
+  "material_x1",
+  "requirements_x2_section",
+  "section_title_x2",
+  "material_x2",
+  "requirements_x3_section",
+  "section_title_x3",
+  "material_d_x3",
+  "requirements_x4_section",
+  "section_title_x4",
+  "material_d_x4",
+  "requirements_x5_section",
+  "section_title_x5",
+  "material_d_x5",
+  "requirements_x6_section",
+  "section_title_x6",
+  "material_x6",
+  "requirements_x7_section",
+  "section_title_x7",
+  "material_x7",
+  "requirements_x8_section",
+  "section_title_x8",
+  "material_x8",
+  "requirements_x9_section",
+  "section_title_x9",
+  "material_x9"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "label": "Report Date"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "label": "Customer ID",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer_id.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "label": "Project Code",
+   "options": "Project"
+  },
+  {
+   "fetch_from": "project_code.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "estimated_start_date",
+   "fieldtype": "Date",
+   "label": "Estimated Start date"
+  },
+  {
+   "fieldname": "estimated_end_date",
+   "fieldtype": "Date",
+   "label": "Estimated End Date"
+  },
+  {
+   "fieldname": "column_break_u8aj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pd1p",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subject_of_report",
+   "fieldtype": "Small Text",
+   "label": "Subject of Report"
+  },
+  {
+   "fieldname": "column_break_ivrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "report_details_section",
+   "fieldtype": "Section Break",
+   "label": "Report Details"
+  },
+  {
+   "fetch_from": "template_for_survey_scope.terms",
+   "fetch_if_empty": 1,
+   "fieldname": "scope_of_survey",
+   "fieldtype": "Text Editor",
+   "label": "Scope of Survey"
+  },
+  {
+   "fieldname": "table_of_content_section",
+   "fieldtype": "Section Break",
+   "label": "Table of Content"
+  },
+  {
+   "fetch_from": "template_for_table_of_content.terms",
+   "fetch_if_empty": 1,
+   "fieldname": "table_of_content",
+   "fieldtype": "Text Editor",
+   "label": "Table of Content"
+  },
+  {
+   "fieldname": "executive_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Executive Summary"
+  },
+  {
+   "fetch_from": "template_for_executive_summary.terms",
+   "fetch_if_empty": 1,
+   "fieldname": "executive_summary",
+   "fieldtype": "Text Editor",
+   "label": "Executive Summary"
+  },
+  {
+   "fieldname": "requirement_tab",
+   "fieldtype": "Tab Break",
+   "label": "Requirement"
+  },
+  {
+   "fieldname": "requirements_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements"
+  },
+  {
+   "fieldname": "section_title",
+   "fieldtype": "Data",
+   "label": "Section Title"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Table",
+   "label": "Material",
+   "options": "Materials"
+  },
+  {
+   "fieldname": "template_for_survey_scope",
+   "fieldtype": "Link",
+   "label": "Template For Survey Scope",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "template_for_table_of_content",
+   "fieldtype": "Link",
+   "label": "Template for Table of Content",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "template_for_executive_summary",
+   "fieldtype": "Link",
+   "label": "Template for Executive Summary",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "requirements_x1_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x1"
+  },
+  {
+   "fieldname": "section_title_x1",
+   "fieldtype": "Data",
+   "label": "Section Title x1"
+  },
+  {
+   "fieldname": "material_x1",
+   "fieldtype": "Table",
+   "label": "Material x1",
+   "options": "Material Section 1"
+  },
+  {
+   "fieldname": "requirements_x2_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x2"
+  },
+  {
+   "fieldname": "section_title_x2",
+   "fieldtype": "Data",
+   "label": "Section Title x2"
+  },
+  {
+   "fieldname": "material_x2",
+   "fieldtype": "Table",
+   "label": "Material x2",
+   "options": "Material Section B"
+  },
+  {
+   "fieldname": "requirements_x3_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x3"
+  },
+  {
+   "fieldname": "section_title_x3",
+   "fieldtype": "Data",
+   "label": "Section Title x3"
+  },
+  {
+   "fieldname": "material_d_x3",
+   "fieldtype": "Table",
+   "label": "Material D x3",
+   "options": "Material Section C"
+  },
+  {
+   "fieldname": "requirements_x4_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x4"
+  },
+  {
+   "fieldname": "section_title_x4",
+   "fieldtype": "Data",
+   "label": "Section Title x4"
+  },
+  {
+   "fieldname": "material_d_x4",
+   "fieldtype": "Table",
+   "label": "Material D x4",
+   "options": "Material Section D"
+  },
+  {
+   "fieldname": "requirements_x5_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x5"
+  },
+  {
+   "fieldname": "section_title_x5",
+   "fieldtype": "Data",
+   "label": "Section Title x5"
+  },
+  {
+   "fieldname": "material_d_x5",
+   "fieldtype": "Table",
+   "label": "Material D x5",
+   "options": "Material Section E"
+  },
+  {
+   "fieldname": "requirements_x6_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x6"
+  },
+  {
+   "fieldname": "section_title_x6",
+   "fieldtype": "Data",
+   "label": "Section Title x6"
+  },
+  {
+   "fieldname": "material_x6",
+   "fieldtype": "Table",
+   "label": "Material x6",
+   "options": "Material Section F"
+  },
+  {
+   "fieldname": "requirements_x7_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x7"
+  },
+  {
+   "fieldname": "section_title_x7",
+   "fieldtype": "Data",
+   "label": "Section Title x7"
+  },
+  {
+   "fieldname": "material_x7",
+   "fieldtype": "Table",
+   "label": "Material x7",
+   "options": "Material Section I"
+  },
+  {
+   "fieldname": "requirements_x8_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x8"
+  },
+  {
+   "fieldname": "section_title_x8",
+   "fieldtype": "Data",
+   "label": "Section Title x8"
+  },
+  {
+   "fieldname": "material_x8",
+   "fieldtype": "Table",
+   "label": "Material x8",
+   "options": "Material Section J"
+  },
+  {
+   "fieldname": "requirements_x9_section",
+   "fieldtype": "Section Break",
+   "label": "Requirements x9"
+  },
+  {
+   "fieldname": "section_title_x9",
+   "fieldtype": "Data",
+   "label": "Section Title x9"
+  },
+  {
+   "fieldname": "material_x9",
+   "fieldtype": "Table",
+   "label": "Material x9",
+   "options": "Material Section K"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-17 20:53:23.838896",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Survey Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

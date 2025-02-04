@@ -113,6 +113,22 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
+
+# hooks.py
+
+scheduler_events = {
+    "cron": {
+        "*/2 * * * *": [  # This cron expression runs the job every 2 minutes
+            "general.waybill_import.fetch_and_create_waybills"
+        ]
+    }
+}
+
+
+
+
+
+
 # scheduler_events = {
 #	"all": [
 #		"general.tasks.all"

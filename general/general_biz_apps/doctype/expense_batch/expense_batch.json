@@ -208,7 +208,8 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
-   "label": "Naming Series"
+   "label": "Naming Series",
+   "options": "EXP-PAY-.YY.-.#####"
   },
   {
    "fetch_from": "prepared_by.employee_name",
@@ -234,7 +235,7 @@
  "is_submittable": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2024-07-16 14:50:53.314466",
+ "modified": "2024-12-10 12:10:44.645378",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Expense Batch",
@@ -242,6 +243,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -267,6 +270,8 @@
    "write": 1
   },
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -280,6 +285,8 @@
    "write": 1
   },
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

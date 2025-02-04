@@ -1,0 +1,176 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-09-29 19:23:41.957579",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_m8uw",
+  "region",
+  "naming_series",
+  "service_center_name",
+  "code",
+  "column_break_dusy",
+  "agility_id",
+  "lga_id",
+  "parent_service_center",
+  "column_break_den6",
+  "is_group",
+  "company",
+  "address",
+  "lft",
+  "rgt",
+  "old_parent"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_m8uw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Old Parent",
+   "options": "Service Center"
+  },
+  {
+   "fieldname": "parent_service_center",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Parent Service Center",
+   "options": "Service Center"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Region",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Naming Series",
+   "options": "\nLI-.####\nLM-.####\nSW-.####\nSE-.####\nSS-.####\nNN-.####"
+  },
+  {
+   "fieldname": "service_center_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service Center Name"
+  },
+  {
+   "fieldname": "column_break_dusy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "agility_id",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Agility ID"
+  },
+  {
+   "fieldname": "lga_id",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "LGA ID"
+  },
+  {
+   "fieldname": "column_break_den6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Code",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2024-09-30 19:33:09.039765",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Service Center",
+ "naming_rule": "By \"Naming Series\" field",
+ "nsm_parent_field": "parent_service_center",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

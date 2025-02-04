@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-22 19:53:18.217335",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_mpdr",
+  "last_processed_sequence",
+  "file_path",
+  "import_interval",
+  "column_break_f5us",
+  "next_scheduled_time",
+  "processing_status",
+  "error_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_mpdr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "last_processed_sequence",
+   "fieldtype": "Int",
+   "label": "Last Processed Sequence"
+  },
+  {
+   "fieldname": "file_path",
+   "fieldtype": "Data",
+   "label": "File Path"
+  },
+  {
+   "fieldname": "import_interval",
+   "fieldtype": "Int",
+   "label": "Import Interval"
+  },
+  {
+   "fieldname": "next_scheduled_time",
+   "fieldtype": "Datetime",
+   "label": "Next Scheduled Time"
+  },
+  {
+   "fieldname": "processing_status",
+   "fieldtype": "Select",
+   "label": "Processing Status",
+   "options": "\nPending\nProcessing\nCompleted\nError"
+  },
+  {
+   "fieldname": "error_log",
+   "fieldtype": "Text",
+   "label": "Error Log"
+  },
+  {
+   "fieldname": "column_break_f5us",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-22 19:57:53.978607",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Waybill Import Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -12,34 +12,32 @@
  "engine": "InnoDB",
  "field_order": [
   "transaction_detail_section",
+  "transaction_date",
   "naming_series",
   "title",
-  "transaction_date",
   "column_break_a3gqx",
   "customer_type",
+  "cost_center",
   "column_break_7fq6f",
   "customer_id",
-  "column_break_bxo1t",
-  "customer_name",
-  "cost_center",
-  "section_break_2mvpc",
   "cash_customer_name",
-  "column_break_gwlhe",
-  "company",
+  "customer_name",
+  "column_break_bxo1t",
   "section_break_icvsx",
-  "receipt_currency",
-  "column_break_rbnba",
-  "exchange_rate",
-  "column_break_94cdw",
   "create_accounting_entries",
-  "apply_withholding_tax",
-  "column_break_ynk5s",
+  "column_break_rbnba",
+  "company",
+  "column_break_94cdw",
   "amortize",
+  "column_break_ynk5s",
   "transactions_detail_section",
+  "receipt_currency",
   "amount_paid",
   "amount_paid_in_fc",
+  "wht_amount",
   "mode_of_payment",
   "column_break_e1fvs",
+  "exchange_rate",
   "transaction_purposes",
   "column_break_iyr5",
   "reference_no",
@@ -56,12 +54,6 @@
   "column_break_pnig6",
   "deferred_revenue_account",
   "revenue_account",
-  "section_break_r9iee",
-  "wht_rate",
-  "column_break_shg1q",
-  "wht_amount",
-  "column_break_yz1kq",
-  "net_amount",
   "signature_section",
   "column_break_dpr3j",
   "issued_by",
@@ -75,13 +67,14 @@
   "approved_by",
   "column_break_g6wm",
   "app_date",
-  "accounting_tab",
-  "banking_detail_section",
+  "bank_detail_tab",
+  "bank_detail_section",
   "remittance_bank",
   "column_break_zpm14",
   "remittance_bank_gl",
   "column_break_6zu0m",
   "bank_account_currency",
+  "local_currency_amount",
   "column_break_shcbv",
   "referenced_document_no",
   "schedule_tab",
@@ -123,14 +116,14 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Transaction Type",
-   "options": "\nReceive from Registered\nReceive from One-Off\nRevenue Receipting\nCustomer Refund\nTransfer In"
+   "options": "\nReceive from Registered\nWithholding Tax\nReceive from One-Off\nRevenue Receipting\nCustomer Refund\nTransfer In"
   },
   {
    "fieldname": "column_break_7fq6f",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:in_list([\"Receive from Registered\", \"Receive from One-Off\", \"Customer Refund\"], doc.customer_type)",
+   "depends_on": "eval:in_list([\"Receive from Registered\", \"Receive from One-Off\", \"Customer Refund\", \"Withholding Tax\"], doc.customer_type)",
    "fieldname": "customer_id",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -150,11 +143,6 @@
    "label": "Customer Name"
   },
   {
-   "fieldname": "section_break_2mvpc",
-   "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "eval:doc.customer_type != 'Receive from Registered'",
    "fieldname": "cash_customer_name",
    "fieldtype": "Data",
    "in_filter": 1,
@@ -162,12 +150,7 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Cash Customer Name",
-   "mandatory_depends_on": "eval:doc.customer_type != 'Receive from Registered'"
-  },
-  {
-   "fieldname": "column_break_gwlhe",
-   "fieldtype": "Column Break"
+   "label": "Cash Customer Name"
   },
   {
    "fieldname": "company",
@@ -180,6 +163,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval:doc.customer_type != \"Withholding Tax\"",
    "fieldname": "receipt_currency",
    "fieldtype": "Link",
    "label": "Receipt Currency",
@@ -208,13 +192,6 @@
    "label": "Create Accounting Entries"
   },
   {
-   "default": "0",
-   "fieldname": "apply_withholding_tax",
-   "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Apply Withholding tax"
-  },
-  {
    "fieldname": "column_break_ynk5s",
    "fieldtype": "Column Break"
   },
@@ -232,14 +209,14 @@
    "mandatory_depends_on": "doc.customer_type"
   },
   {
-   "depends_on": "eval:doc.receipt_currency == 'NGN'",
+   "depends_on": "eval:doc.receipt_currency == 'NGN' && doc.customer_type != \"Withholding Tax\"",
    "fieldname": "amount_paid",
    "fieldtype": "Currency",
    "label": "Amount Paid",
    "options": "Company:company:default_currency"
   },
   {
-   "depends_on": "eval:doc.receipt_currency != 'NGN'",
+   "depends_on": "eval:doc.receipt_currency != 'NGN' && doc.customer_type != \"Withholding Tax\"",
    "fieldname": "amount_paid_in_fc",
    "fieldtype": "Float",
    "label": "Amount Paid In FC",
@@ -258,7 +235,9 @@
   {
    "fieldname": "transaction_purposes",
    "fieldtype": "Small Text",
-   "label": "Transaction Purposes"
+   "label": "Transaction Purposes",
+   "max_height": "105px",
+   "width": "200px"
   },
   {
    "fieldname": "column_break_iyr5",
@@ -272,7 +251,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Cheque / Ref No",
-   "length": 8,
+   "length": 15,
    "reqd": 1
   },
   {
@@ -292,7 +271,8 @@
   {
    "fieldname": "amount_in_words",
    "fieldtype": "Small Text",
-   "label": "Amount In Words"
+   "label": "Amount In Words",
+   "max_height": "150px"
   },
   {
    "depends_on": "eval:doc.amortize == 1",
@@ -376,38 +356,9 @@
    "options": "Account"
   },
   {
-   "collapsible": 1,
-   "depends_on": "apply_withholding_tax",
-   "fieldname": "section_break_r9iee",
-   "fieldtype": "Section Break",
-   "label": "Withholding tax",
-   "mandatory_depends_on": "apply_withholding_tax"
-  },
-  {
-   "fieldname": "wht_rate",
-   "fieldtype": "Select",
-   "label": "WHT Rate",
-   "options": "\n5%\n10%"
-  },
-  {
-   "fieldname": "column_break_shg1q",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "wht_amount",
    "fieldtype": "Currency",
-   "label": "WHT Amount",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_yz1kq",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "net_amount",
-   "fieldtype": "Currency",
-   "label": "Net Amount",
-   "read_only": 1
+   "label": "WHT Amount"
   },
   {
    "collapsible": 1,
@@ -474,17 +425,6 @@
    "fieldname": "app_date",
    "fieldtype": "Date",
    "label": "App Date"
-  },
-  {
-   "fieldname": "accounting_tab",
-   "fieldtype": "Tab Break",
-   "label": "Accounting"
-  },
-  {
-   "fieldname": "banking_detail_section",
-   "fieldtype": "Section Break",
-   "label": "Banking Detail",
-   "mandatory_depends_on": "doc.customer_type"
   },
   {
    "fieldname": "remittance_bank",
@@ -555,6 +495,22 @@
    "fieldtype": "Link",
    "label": "Cost Center",
    "options": "Cost Center"
+  },
+  {
+   "fieldname": "bank_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Detail",
+   "mandatory_depends_on": "doc.customer_type"
+  },
+  {
+   "fieldname": "bank_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bank Detail"
+  },
+  {
+   "fieldname": "local_currency_amount",
+   "fieldtype": "Currency",
+   "label": "Local Currency Amount"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -571,7 +527,7 @@
    "link_fieldname": "customer_name"
   }
  ],
- "modified": "2024-08-05 15:42:44.555666",
+ "modified": "2024-12-27 09:17:08.142584",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Receipts",

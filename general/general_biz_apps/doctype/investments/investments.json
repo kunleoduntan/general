@@ -35,6 +35,7 @@
   "monthly_interest_income",
   "column_break_25",
   "description",
+  "company",
   "book_investment",
   "accounting_and_booking_section",
   "principal_account",
@@ -447,12 +448,18 @@
    "length": 5,
    "mandatory_depends_on": "book_investment",
    "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-17 14:51:47.145894",
+ "modified": "2024-11-21 21:49:58.037375",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Investments",
