@@ -8,127 +8,130 @@
  "field_order": [
   "date",
   "beneficiary",
-  "column_break_xww6",
+  "column_break_igyen",
   "account",
-  "column_break_g2y9",
+  "column_break_kgqpq",
   "transaction_description",
-  "section_break_wg37",
+  "section_break_huji9",
   "outflow",
-  "column_break_hktd",
+  "column_break_ozgfm",
   "exch_rate",
-  "column_break_sqsd",
+  "column_break_bwdef",
   "inflow",
-  "column_break_x1ml",
+  "column_break_purmm",
   "balance",
+  "currency",
   "accounting_and_dimension_section",
   "cost_center",
-  "column_break_ioua",
+  "column_break_mapup",
   "project",
-  "column_break_iael",
-  "branch",
-  "column_break_s842",
+  "column_break_vbogp",
   "title"
  ],
  "fields": [
   {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Title"
-  },
-  {
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Date"
+   "label": "Date",
+   "reqd": 1
   },
   {
    "fieldname": "beneficiary",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Beneficiary"
-  },
-  {
-   "fieldname": "transaction_description",
-   "fieldtype": "Small Text",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Transaction Description"
+   "label": "Beneficiary",
+   "reqd": 1
   },
   {
    "fieldname": "account",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Account",
-   "options": "Account"
+   "options": "Account",
+   "reqd": 1
   },
   {
    "fieldname": "cost_center",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Cost Center",
    "options": "Cost Center"
   },
   {
-   "fieldname": "column_break_xww6",
+   "fieldname": "transaction_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Transaction Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inflow",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Inflow",
+   "precision": "2",
+   "read_only_depends_on": "outflow"
+  },
+  {
+   "fieldname": "outflow",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Outflow",
+   "precision": "2",
+   "read_only_depends_on": "inflow"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "column_break_igyen",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_g2y9",
+   "fieldname": "column_break_kgqpq",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_hktd",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_wg37",
+   "fieldname": "section_break_huji9",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "column_break_sqsd",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_x1ml",
+   "fieldname": "column_break_ozgfm",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "exch_rate",
-   "fieldtype": "Currency",
-   "label": "Exch Rate"
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Exch Rate",
+   "reqd": 1
   },
   {
-   "fieldname": "outflow",
-   "fieldtype": "Currency",
-   "label": "Outflow"
+   "fieldname": "column_break_bwdef",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_purmm",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "balance",
-   "fieldtype": "Currency",
+   "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Balance",
-   "read_only": 1
+   "precision": "2"
   },
   {
-   "fieldname": "inflow",
-   "fieldtype": "Currency",
-   "label": "Inflow"
-  },
-  {
-   "fieldname": "project",
+   "fieldname": "currency",
    "fieldtype": "Link",
-   "label": "Project",
-   "options": "Project"
-  },
-  {
-   "fieldname": "branch",
-   "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch"
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
   },
   {
    "fieldname": "accounting_and_dimension_section",
@@ -136,24 +139,27 @@
    "label": "Accounting and Dimension"
   },
   {
-   "fieldname": "column_break_ioua",
+   "fieldname": "column_break_mapup",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_iael",
-   "fieldtype": "Column Break"
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project"
   },
   {
-   "fieldname": "column_break_s842",
+   "fieldname": "column_break_vbogp",
    "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-16 14:43:52.721944",
+ "modified": "2025-03-01 12:24:10.863929",
  "modified_by": "Administrator",
- "module": "General Biz Apps",
+ "module": "church",
  "name": "Petty Cash Transaction",
  "owner": "Administrator",
  "permissions": [],

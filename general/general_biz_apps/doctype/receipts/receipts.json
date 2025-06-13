@@ -12,29 +12,29 @@
  "engine": "InnoDB",
  "field_order": [
   "transaction_detail_section",
-  "naming_series",
-  "title",
   "transaction_date",
+  "naming_series",
   "column_break_a3gqx",
   "customer_type",
+  "title",
   "column_break_7fq6f",
   "customer_id",
+  "cash_customer_name",
   "column_break_bxo1t",
   "customer_name",
   "cost_center",
   "section_break_2mvpc",
-  "cash_customer_name",
+  "receipt_currency",
+  "amortize",
+  "is_related_coy_trans",
   "column_break_gwlhe",
   "company",
-  "section_break_icvsx",
-  "receipt_currency",
-  "column_break_rbnba",
-  "exchange_rate",
-  "column_break_94cdw",
-  "create_accounting_entries",
+  "is_multi_line",
   "apply_withholding_tax",
-  "column_break_ynk5s",
-  "amortize",
+  "column_break_94cdw",
+  "exchange_rate",
+  "create_accounting_entries",
+  "is_shared_cost",
   "transactions_detail_section",
   "amount_paid",
   "amount_paid_in_fc",
@@ -62,6 +62,16 @@
   "wht_amount",
   "column_break_yz1kq",
   "net_amount",
+  "customer_outstanding_section",
+  "get_outstanding_invoices",
+  "receipts_reference",
+  "total_outstanding_invoice",
+  "multi_line_transactions_section",
+  "payments_item_line",
+  "total",
+  "related_company_transactions_section",
+  "related_company_payments",
+  "total_rcoy",
   "signature_section",
   "column_break_dpr3j",
   "issued_by",
@@ -78,8 +88,9 @@
   "accounting_tab",
   "banking_detail_section",
   "remittance_bank",
-  "column_break_zpm14",
   "remittance_bank_gl",
+  "column_break_zpm14",
+  "local_currency_amount",
   "column_break_6zu0m",
   "bank_account_currency",
   "column_break_shcbv",
@@ -130,6 +141,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:in_list([\"Receive from Registered\", \"Receive from One-Off\", \"Customer Refund\"], doc.customer_type)",
    "fieldname": "customer_id",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -142,7 +154,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.customer_type != 'Revenue Receipting'",
+   "depends_on": "customer_id",
    "fetch_from": "customer_id.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
@@ -153,7 +165,7 @@
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval:doc.customer_type != 'Receive from Registered'",
+   "depends_on": "eval:!in_list([\"Receive from Registered\", \"Customer Refund\"], doc.customer_type)",
    "fieldname": "cash_customer_name",
    "fieldtype": "Data",
    "in_filter": 1,
@@ -162,7 +174,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Cash Customer Name",
-   "mandatory_depends_on": "eval:doc.customer_type != 'Receive from Registered'"
+   "mandatory_depends_on": "eval:!in_list([\"Receive from Registered\", \"Customer Refund\"], doc.customer_type)"
   },
   {
    "fieldname": "column_break_gwlhe",
@@ -175,18 +187,10 @@
    "options": "Company"
   },
   {
-   "fieldname": "section_break_icvsx",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "receipt_currency",
    "fieldtype": "Link",
    "label": "Receipt Currency",
    "options": "Currency"
-  },
-  {
-   "fieldname": "column_break_rbnba",
-   "fieldtype": "Column Break"
   },
   {
    "depends_on": "eval:doc.receipt_currency != 'NGN'",
@@ -212,10 +216,6 @@
    "fieldtype": "Check",
    "hidden": 1,
    "label": "Apply Withholding tax"
-  },
-  {
-   "fieldname": "column_break_ynk5s",
-   "fieldtype": "Column Break"
   },
   {
    "default": "0",
@@ -257,7 +257,8 @@
   {
    "fieldname": "transaction_purposes",
    "fieldtype": "Small Text",
-   "label": "Transaction Purposes"
+   "label": "Transaction Purposes",
+   "max_height": "105px"
   },
   {
    "fieldname": "column_break_iyr5",
@@ -275,14 +276,16 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:!in_list([\"Receive from Registered\", \"Customer Refund\", \"Receive from One-Off\"], doc.customer_type)\r\n",
    "description": "Enter Revenue Ac. if transaction is not amortized else enter Deferred Revenue Account\n",
    "fieldname": "account_to_credit",
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Account To Credit",
-   "mandatory_depends_on": "eval: doc.customer_type == \"Revenue Receipting\" || doc.customer_type == \"Transfer In\"",
-   "options": "Account"
+   "mandatory_depends_on": "eval:!in_list([\"Receive from Registered\", \"Customer Refund\", \"Receive from One-Off\"], doc.customer_type)\r\n",
+   "options": "Account",
+   "read_only_depends_on": "eval: doc.customer_type == \"Transfer In\""
   },
   {
    "fieldname": "column_break_wkuqa",
@@ -291,16 +294,17 @@
   {
    "fieldname": "amount_in_words",
    "fieldtype": "Small Text",
-   "label": "Amount In Words"
+   "label": "Amount In Words",
+   "max_height": "105px"
   },
   {
-   "depends_on": "amortise ",
+   "depends_on": "eval:doc.amortize == 1",
    "fieldname": "amortization_settings_section",
    "fieldtype": "Section Break",
-   "label": "Amortization Settings",
-   "mandatory_depends_on": "eval:doc.amortise == 1"
+   "label": "Amortization Settings"
   },
   {
+   "depends_on": "eval:doc.amortize == 1",
    "fieldname": "frequency",
    "fieldtype": "Select",
    "in_filter": 1,
@@ -525,15 +529,6 @@
    "label": "Referenced Doc No"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Receipts",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "fieldname": "schedule_tab",
    "fieldtype": "Tab Break",
    "label": "Schedule"
@@ -563,6 +558,82 @@
    "fieldtype": "Link",
    "label": "Cost Center",
    "options": "Cost Center"
+  },
+  {
+   "fieldname": "customer_outstanding_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Outstanding"
+  },
+  {
+   "fieldname": "receipts_reference",
+   "fieldtype": "Table",
+   "label": "Receipts Reference",
+   "options": "Receipts Reference"
+  },
+  {
+   "fieldname": "multi_line_transactions_section",
+   "fieldtype": "Section Break",
+   "label": "Multi Line Transactions"
+  },
+  {
+   "fieldname": "payments_item_line",
+   "fieldtype": "Table",
+   "label": "Payments Item Line",
+   "options": "Payments Item Line"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total "
+  },
+  {
+   "fieldname": "related_company_transactions_section",
+   "fieldtype": "Section Break",
+   "label": "Related Company Transactions"
+  },
+  {
+   "fieldname": "related_company_payments",
+   "fieldtype": "Table",
+   "label": "Related Company Payments",
+   "options": "Related Company Payments"
+  },
+  {
+   "fieldname": "total_rcoy",
+   "fieldtype": "Float",
+   "label": "Total Rcoy"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_multi_line",
+   "fieldtype": "Check",
+   "label": " Is Multi Line"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_shared_cost",
+   "fieldtype": "Check",
+   "label": " Is Shared Cost"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_related_coy_trans",
+   "fieldtype": "Check",
+   "label": " Is Related Coy Trans"
+  },
+  {
+   "fieldname": "total_outstanding_invoice",
+   "fieldtype": "Float",
+   "label": "Total Outstanding Invoice"
+  },
+  {
+   "fieldname": "get_outstanding_invoices",
+   "fieldtype": "Button",
+   "label": "Get Outstanding Invoices"
+  },
+  {
+   "fieldname": "local_currency_amount",
+   "fieldtype": "Currency",
+   "label": "Local Currency Amount"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -579,7 +650,7 @@
    "link_fieldname": "customer_name"
   }
  ],
- "modified": "2024-06-17 20:02:00.406494",
+ "modified": "2025-05-10 12:20:01.867219",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Receipts",
@@ -634,5 +705,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "title"
+ "title_field": "title",
+ "track_changes": 1
 }

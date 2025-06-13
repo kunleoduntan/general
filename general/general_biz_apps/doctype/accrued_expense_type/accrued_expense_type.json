@@ -24,6 +24,7 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Title"
   },
   {
@@ -90,7 +91,7 @@
   },
   {
    "fieldname": "gross_amount",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "label": "Gross Amount",
    "reqd": 1
   },
@@ -103,7 +104,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-10 16:32:28.452406",
+ "modified": "2024-08-08 09:45:31.625677",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Accrued Expense Type",

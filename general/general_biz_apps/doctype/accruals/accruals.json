@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2024-07-10 11:09:12.375900",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,8 +9,9 @@
  "engine": "InnoDB",
  "field_order": [
   "reporting_date",
-  "column_break_oxs9",
+  "naming_series",
   "month",
+  "column_break_oxs9",
   "company",
   "column_break_okge",
   "process_accruals",
@@ -91,12 +93,18 @@
   {
    "fieldname": "reporting_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Reporting Date"
   },
   {
    "default": "0",
    "fieldname": "process_accruals",
    "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Process Accruals"
   },
   {
@@ -117,7 +125,11 @@
   {
    "fieldname": "total_charged_amount",
    "fieldtype": "Currency",
-   "label": "Total Charged Amount"
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Total Charged Amount",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_9g35",
@@ -126,7 +138,11 @@
   {
    "fieldname": "total_wht",
    "fieldtype": "Currency",
-   "label": "Total WHT"
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Total WHT",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_bnoz",
@@ -135,16 +151,27 @@
   {
    "fieldname": "total_accrued_amount",
    "fieldtype": "Currency",
-   "label": "Total Accrued Amount"
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Total Accrued Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-24 10:35:19.836917",
+ "modified": "2024-08-24 21:56:05.166103",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Accruals",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

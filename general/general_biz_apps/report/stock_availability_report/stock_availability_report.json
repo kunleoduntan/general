@@ -1,0 +1,52 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-06-12 14:22:12.316961",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "mandatory": 1,
+   "options": "Company",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "mandatory": 1,
+   "options": "Warehouse",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "label": "As at",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Letter Head 1",
+ "letterhead": null,
+ "modified": "2025-06-12 17:05:44.815219",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Stock Availability Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    sle.item_code AS `Item Code ::100`,\r\n    COALESCE(sle.outgoing_rate, sle.incoming_rate, 0) AS cost_price,\r\n    sle.stock_uom AS `UOM ::60`,\r\n    sle.warehouse AS `Warehouse ::200`,\r\n    COALESCE(sle.custom_re_order_level, sle.custom_reorder_level) AS `Reorder Level ::120`,\r\n    sle.qty_after_transaction AS `Av.Qty ::80`,\r\n    sle.custom_safety_stock AS `Safety Stock ::80`,\r\n    sle.custom_reorder_qty AS `Reorder Qty ::100`,\r\n    sle.custom_minimum_order_qty AS `Min Stock ::120`,\r\n    sle.custom_reorder_level AS `Reorder Level ::120`,\r\n    \r\n    FORMAT(ROUND(sle.incoming_rate, 2), 2) AS `Last Pur Price ::120:Currency`,\r\n    FORMAT(ROUND( sle.valuation_rate, 2), 2) AS `V.Price ::120:Currency`,\r\n    \r\n    FORMAT(ROUND( sle.stock_value, 2), 2) AS `Stock Value ::120:Currency`,\r\n    DATE_FORMAT(sle.posting_date, '%%d-%%m-%%Y') AS `Posting Date ::120`,\r\n    \r\n    sle.name AS Reference\r\nFROM `tabStock Ledger Entry` sle\r\nINNER JOIN (\r\n    SELECT item_code, MAX(creation) AS latest_creation\r\n    FROM `tabStock Ledger Entry`\r\n    WHERE company = %(company)s\r\n      AND warehouse = %(warehouse)s\r\n      AND docstatus = 1\r\n      AND posting_date <= %(report_date)s\r\n    GROUP BY item_code\r\n) latest_sle\r\nON sle.item_code = latest_sle.item_code AND sle.creation = latest_sle.latest_creation\r\nWHERE sle.company = %(company)s\r\n  AND sle.warehouse = %(warehouse)s\r\n  AND sle.docstatus = 1\r\n  AND sle.posting_date <= %(report_date)s\r\nORDER BY sle.item_code;\r\n",
+ "ref_doctype": "Stock Ledger Entry",
+ "report_name": "Stock Availability Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

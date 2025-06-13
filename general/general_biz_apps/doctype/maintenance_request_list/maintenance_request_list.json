@@ -6,21 +6,30 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "details_section",
   "title",
   "trans_date",
   "is_asset",
+  "column_break_i6rv",
   "asset_code",
   "asset_name",
   "column_break_ctb6",
-  "cost_center",
-  "days_until_next_service",
-  "next_service_date",
-  "column_break_u2km",
-  "req_department",
   "estimated_cost",
-  "expense_account",
-  "column_break_shzx",
-  "description"
+  "description",
+  "dimension_section",
+  "cost_center",
+  "column_break_hw67",
+  "req_department",
+  "column_break_x0eo",
+  "branch",
+  "column_break_xsl3",
+  "project",
+  "column_break_ecpi",
+  "days_until_next_service",
+  "column_break_rbfv",
+  "next_service_date",
+  "column_break_ixfv",
+  "expense_account"
  ],
  "fields": [
   {
@@ -29,7 +38,8 @@
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Title"
+   "label": "Title",
+   "read_only": 1
   },
   {
    "fieldname": "description",
@@ -119,14 +129,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_u2km",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_shzx",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "trans_date",
    "fieldtype": "Date",
    "label": "Trans Date"
@@ -136,12 +138,63 @@
    "fieldtype": "Link",
    "label": "Expense Account",
    "options": "Account"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "column_break_i6rv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dimension_section",
+   "fieldtype": "Section Break",
+   "label": "Dimension"
+  },
+  {
+   "fieldname": "column_break_hw67",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_x0eo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xsl3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ecpi",
+   "fieldtype": "Section Break",
+   "label": "Schedules"
+  },
+  {
+   "fieldname": "column_break_rbfv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ixfv",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-21 20:14:02.781630",
+ "modified": "2024-08-13 09:29:09.100147",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Maintenance Request List",

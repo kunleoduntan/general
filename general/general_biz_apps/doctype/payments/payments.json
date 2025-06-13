@@ -14,21 +14,34 @@
   "column_break_a3gqx",
   "trans_type",
   "column_break_7fq6f",
+  "payee_id",
   "payee_name",
   "column_break_bxo1t",
-  "payee_id",
+  "supplier_name",
   "naming_series",
+  "section_break_2ihh",
+  "create_accounting_entries",
+  "column_break_pbyi",
+  "deduct_wht",
+  "column_break_xeno",
+  "amortize",
+  "column_break_jn0m",
+  "is_multi_line",
+  "column_break_8a92",
+  "is_shared_cost",
+  "column_break_jjdb",
+  "is_related_coy_trans",
   "accounting_and_dimension",
   "branch",
+  "nature_of_expense",
   "column_break_stmx",
   "cost_center",
   "column_break_xwvb",
   "department",
   "column_break_d3fe",
   "project",
-  "project_name",
   "column_break_a0ha",
-  "nature_of_expense",
+  "project_name",
   "section_break_icvsx",
   "payment_currency",
   "customer_id",
@@ -38,11 +51,6 @@
   "column_break_se8x",
   "company",
   "column_break_kbrd",
-  "create_accounting_entries",
-  "apply_withholding_tax",
-  "amortize",
-  "is_multi_line",
-  "is_shared_cost",
   "transactions_detail_section",
   "amount_paid",
   "amount_paid_in_fc",
@@ -65,13 +73,21 @@
   "deferred_expense_account",
   "expense_account",
   "section_break_r9iee",
-  "wht_rate",
+  "whtax_rate",
+  "wht_account",
   "column_break_shg1q",
   "wht_amount",
   "column_break_yz1kq",
   "net_amount",
+  "supplier_invoice_detail_section",
+  "get_outstanding_invoices",
+  "payments_reference",
+  "total_outstanding_invoice",
   "multi_line_transactions_section",
   "payments_item_line",
+  "related_company_transactions_section",
+  "related_company_payments",
+  "total_rcoy",
   "signature_section",
   "column_break_dpr3j",
   "issued_by",
@@ -146,7 +162,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Payee ID",
+   "label": "Supplier ID",
    "options": "Supplier"
   },
   {
@@ -185,13 +201,7 @@
    "default": "1",
    "fieldname": "create_accounting_entries",
    "fieldtype": "Check",
-   "label": "Create Accounting Entries"
-  },
-  {
-   "default": "0",
-   "fieldname": "apply_withholding_tax",
-   "fieldtype": "Check",
-   "label": "Apply Withholding tax"
+   "label": "Create Entries"
   },
   {
    "fieldname": "column_break_ynk5s",
@@ -354,18 +364,11 @@
    "options": "Account"
   },
   {
-   "collapsible": 1,
-   "depends_on": "apply_withholding_tax",
+   "depends_on": "deduct_wht",
    "fieldname": "section_break_r9iee",
    "fieldtype": "Section Break",
    "label": "Withholding tax",
-   "mandatory_depends_on": "apply_withholding_tax"
-  },
-  {
-   "fieldname": "wht_rate",
-   "fieldtype": "Select",
-   "label": "WHT Rate",
-   "options": "\n5%\n10%"
+   "mandatory_depends_on": "deduct_wht"
   },
   {
    "fieldname": "column_break_shg1q",
@@ -449,16 +452,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Payments",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fetch_from": "payee_id.supplier_name",
+   "depends_on": "eval:in_list([\"Expense Payment\", \"Transfer Out\"], doc.trans_type)",
    "fieldname": "payee_name",
    "fieldtype": "Data",
    "label": "Beneficiary"
@@ -472,7 +466,8 @@
    "in_standard_filter": 1,
    "label": "Account To Debit",
    "mandatory_depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\"",
-   "options": "Account"
+   "options": "Account",
+   "read_only_depends_on": "eval: doc.trans_type == \"Transfer Out\""
   },
   {
    "fieldname": "naming_series",
@@ -645,7 +640,7 @@
    "fieldname": "cashflow_type",
    "fieldtype": "Select",
    "label": "Cashflow Type",
-   "options": "\nPayment to Supplier\nPayment of Tax\nStatutory Payment\nLoan Repayment\nInterest on Loan\nPayment of Operation\nInvestments\nPurchase of Assets\nPayment of Salaries\nPayment IRO Related Company\nFunds Transfer",
+   "options": "\nPayment to Supplier\nReceipt from Customer\nPayment of Tax\nStatutory Payment\nLoan Repayment\nInterest on Loan\nPayment of Operation\nInvestments\nPurchase of Assets\nPayment of Salaries\nPayment IRO Related Company\nFunds Transfer",
    "reqd": 1
   },
   {
@@ -710,12 +705,106 @@
    "fieldname": "project_name",
    "fieldtype": "Data",
    "label": "Project Name"
+  },
+  {
+   "depends_on": "payee_id",
+   "fetch_from": "payee_id.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "mandatory_depends_on": "payee_id"
+  },
+  {
+   "depends_on": "eval:doc.trans_type == \"Supplier Payment\"",
+   "fieldname": "supplier_invoice_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Supplier Invoice Detail"
+  },
+  {
+   "fieldname": "payments_reference",
+   "fieldtype": "Table",
+   "label": "Payments Reference",
+   "options": "Payments Reference"
+  },
+  {
+   "fieldname": "related_company_transactions_section",
+   "fieldtype": "Section Break",
+   "label": "Related Company Transactions"
+  },
+  {
+   "fieldname": "related_company_payments",
+   "fieldtype": "Table",
+   "label": "Related Company Payments",
+   "options": "Related Company Payments"
+  },
+  {
+   "fieldname": "total_rcoy",
+   "fieldtype": "Float",
+   "label": "Total Rcoy"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_related_coy_trans",
+   "fieldtype": "Check",
+   "label": "Is Inter Coy"
+  },
+  {
+   "fieldname": "get_outstanding_invoices",
+   "fieldtype": "Button",
+   "label": "Get Outstanding Invoices"
+  },
+  {
+   "fieldname": "total_outstanding_invoice",
+   "fieldtype": "Float",
+   "label": "Total Outstanding Invoice"
+  },
+  {
+   "default": "0",
+   "fieldname": "deduct_wht",
+   "fieldtype": "Check",
+   "label": "Deduct WHT"
+  },
+  {
+   "fieldname": "whtax_rate",
+   "fieldtype": "Float",
+   "label": "WHT Rate"
+  },
+  {
+   "fieldname": "wht_account",
+   "fieldtype": "Link",
+   "label": "WHT Account",
+   "mandatory_depends_on": "deduct_wht",
+   "options": "Account"
+  },
+  {
+   "fieldname": "section_break_2ihh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pbyi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xeno",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jn0m",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_8a92",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jjdb",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-19 05:14:49.302095",
+ "modified": "2025-06-07 15:17:14.780763",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Payments",

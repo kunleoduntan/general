@@ -8,19 +8,18 @@
  "engine": "InnoDB",
  "field_order": [
   "payable_to",
-  "accrued_expense_type",
   "posting_date",
+  "trans_type",
   "column_break_hvnm",
   "start_date",
-  "trans_type",
-  "option",
+  "frequency",
+  "no_of_periods",
   "column_break_td1r",
   "end_date",
   "next_posting_date",
   "next_schedule",
   "column_break_bcqp",
-  "frequency",
-  "no_of_periods",
+  "option",
   "title",
   "description",
   "monetary_section",
@@ -43,7 +42,7 @@
   "wht_account",
   "column_break_u086",
   "deferred_expense_account",
-  "is_sharable",
+  "amortize",
   "is_processed",
   "accounting_dimension_section",
   "branch",
@@ -64,16 +63,6 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Payable To"
-  },
-  {
-   "fieldname": "accrued_expense_type",
-   "fieldtype": "Link",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Accrual Type",
-   "options": "Accrued Expense Type"
   },
   {
    "fieldname": "posting_date",
@@ -245,6 +234,7 @@
    "label": "Accounting"
   },
   {
+   "description": "Expense Account",
    "fetch_from": "accrued_expense_type.dr_account",
    "fieldname": "dr_account",
    "fieldtype": "Link",
@@ -260,6 +250,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "description": "Accrual Acct",
    "fetch_from": "accrued_expense_type.cr_account",
    "fieldname": "cr_account",
    "fieldtype": "Link",
@@ -285,20 +276,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "description": "Prepaid Expense",
    "fieldname": "deferred_expense_account",
    "fieldtype": "Link",
-   "label": "Deferred Expense Account",
+   "label": "Deferred Expense Acct",
    "options": "Account"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_sharable",
-   "fieldtype": "Check",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Is sharable"
   },
   {
    "default": "0",
@@ -346,12 +328,22 @@
    "fieldname": "project_name",
    "fieldtype": "Data",
    "label": "Project Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "amortize",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Amortize"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-24 09:10:20.059330",
+ "modified": "2024-08-24 22:26:19.769920",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Recur Entry",

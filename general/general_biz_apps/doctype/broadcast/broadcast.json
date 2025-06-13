@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-06-09 14:54:40.392862",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "date",
+  "naming_series",
+  "audience_group",
+  "filter",
+  "column_break_vt76",
+  "subject",
+  "message_type",
+  "sent",
+  "column_break_zrzb",
+  "message_purpose",
+  "column_break_pafm",
+  "company",
+  "schedule",
+  "schedule_time",
+  "audience_section",
+  "email_recipients",
+  "total_section",
+  "total_subscribers",
+  "column_break_oybg",
+  "qualified_subscribers",
+  "column_break_ogcl",
+  "message_tab",
+  "message_body",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "no_copy": 1,
+   "options": "\nBRC-.DD.-.MM.-.YY.-.####",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "audience_group",
+   "fieldtype": "Select",
+   "label": "Audience Group",
+   "options": "\nCustomer\nSupplier\nEmployee"
+  },
+  {
+   "fieldname": "filter",
+   "fieldtype": "Select",
+   "label": "Filter",
+   "options": "\nAll\nCompany\nIndividual"
+  },
+  {
+   "fieldname": "column_break_vt76",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject"
+  },
+  {
+   "fieldname": "message_type",
+   "fieldtype": "Select",
+   "label": "Message Type",
+   "options": "\nEmail\nWhatsApp\nSMS"
+  },
+  {
+   "fieldname": "column_break_zrzb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "message_purpose",
+   "fieldtype": "Small Text",
+   "label": "Message Purpose",
+   "max_height": "105px"
+  },
+  {
+   "fieldname": "column_break_pafm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "schedule",
+   "fieldtype": "Check",
+   "label": "Schedule"
+  },
+  {
+   "depends_on": "schedule",
+   "fieldname": "schedule_time",
+   "fieldtype": "Datetime",
+   "label": "Schedule Time"
+  },
+  {
+   "fieldname": "audience_section",
+   "fieldtype": "Section Break",
+   "label": "Audience"
+  },
+  {
+   "fieldname": "email_recipients",
+   "fieldtype": "Table",
+   "label": "Email Recipients",
+   "options": "Email Recipients"
+  },
+  {
+   "fieldname": "total_subscribers",
+   "fieldtype": "Int",
+   "label": "Total Subscribers"
+  },
+  {
+   "fieldname": "message_tab",
+   "fieldtype": "Tab Break",
+   "label": "Message"
+  },
+  {
+   "fieldname": "message_body",
+   "fieldtype": "Text Editor",
+   "label": "Message Body"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Broadcast",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sent",
+   "fieldtype": "Check",
+   "label": "Email Sent"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "total_section",
+   "fieldtype": "Section Break",
+   "label": "Total"
+  },
+  {
+   "fieldname": "column_break_oybg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qualified_subscribers",
+   "fieldtype": "Int",
+   "label": "Qualified Subscribers"
+  },
+  {
+   "fieldname": "column_break_ogcl",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-10 10:06:09.417929",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "Broadcast",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

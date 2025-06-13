@@ -7,21 +7,68 @@
  "doctype": "Notification",
  "document_type": "Payment and Purchase Request",
  "enabled": 1,
- "event": "Save",
+ "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    \r\n    <style>\r\n        body {\r\n            font-family: Arial, sans-serif;\r\n        }\r\n        .container {\r\n            max-width: 600px;\r\n            margin: 0 auto;\r\n            padding: 20px;\r\n            border: 1px solid #ddd;\r\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n            background-color: #e0f7fa;\r\n        }\r\n        .header, .footer {\r\n            text-align: center;\r\n        }\r\n        .content p {\r\n            color: #004d40;\r\n            margin: 0 0 10px;\r\n        }\r\n        table {\r\n            width: 100%;\r\n            border-collapse: collapse;\r\n            margin: 20px 0;\r\n            background-color: #ffffff;\r\n        }\r\n        table, th, td {\r\n            border: 1px solid #ddd;\r\n        }\r\n        th, td {\r\n            padding: 8px;\r\n            text-align: left;\r\n        }\r\n        th {\r\n            background-color: #b2dfdb;\r\n            color: #004d40;\r\n        }\r\n        td {\r\n            color: #00796b;\r\n        }\r\n        .highlight {\r\n            color: #004d40;\r\n            font-weight: bold;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div class=\"container\">\r\n        <div class=\"header\">\r\n            <!-- Header content here if applicable -->\r\n        </div>\r\n\r\n        <div class=\"content\">\r\n            <p>Greetings,</p>\r\n\r\n             <p>This email notification is to inform you about a new requisition form submitted by {{ doc.owner }} on {{ doc.date }}.</p>\r\n\r\n            <table>\r\n                <tr>\r\n                    <th>Requisition ID</th>\r\n                    <td>{{ doc.name }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Beneficiary</th>\r\n                    <td>{{ doc.beneficiary }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Department</th>\r\n                    <td>{{ doc.requesting_department }} </td>\r\n                </tr>\r\n\t\t\t\t\r\n\t\t\t\t <tr>\r\n                    <th>Cost Center</th>\r\n                    <td> {{ doc.cost_center }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Purpose</th>\r\n                    <td>{{ doc.purpose }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Trans Currency</th>\r\n                    <td>{{ doc.currency }}</td>\r\n                </tr>\r\n               \r\n                \r\n                <tr>\r\n                    <th>Amount</th>\r\n                    <td>{{ doc.amount }} </td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Amount In Words</th>\r\n                    <td>{{ doc.amount_in_words }}</td>\r\n                </tr>\r\n            </table>\r\n           <p><b>{{ _(\"A summary of the requisition details can be found on the ERP system: \") }}</b> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</p>\r\n\r\n            <p>Kindly please approve.</p>\r\n\r\n            <p>Thank you.</p>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <!-- Footer content here if applicable -->\r\n        </div>\r\n    </div>\r\n</body>\r\n</html>",
- "modified": "2024-07-06 15:34:24.248714",
- "modified_by": "kunleoduntan@gmail.com",
+ "message": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    \n    <style>\n        .container {\n            max-width: 600px;\n            margin: 0 auto;\n            padding: 20px;\n            border: 1px solid #ddd;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n        }\n        .header, .footer {\n            text-align: center;\n        }\n        .content p {\n            color: black;\n            margin: 0 0 10px;\n        }\n        table {\n            width: 100%;\n            border-collapse: collapse;\n            margin: 20px 0;\n        }\n        table, th, td {\n            border: 1px solid #ddd;\n        }\n        th, td {\n            padding: 8px;\n            text-align: left;\n        }\n        th {\n            background-color: #f2f2f2;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <!-- Header content here if applicable -->\n        </div>\n\n        <div class=\"content\">\n            <p>Greetings,</p>\n\n            <p>This is to inform you that your request for approval as detailed below has been declined.</p>\n\n            <table>\n                <tr>\n                    <th>Requisition ID</th>\n                    <td>{{ doc.name }}</td>\n                </tr>\n                <tr>\n                    <th>Beneficiary</th>\n                    <td>{{ doc.beneficiary }} or {{ doc.supplier_name }}</td>\n                </tr>\n                <tr>\n                    <th>Department</th>\n                    <td>{{ doc.requesting_department }}</td>\n                </tr>\n                <tr>\n                    <th>Purpose</th>\n                    <td>{{ doc.purpose }}</td>\n                </tr>\n                <tr>\n                    <th>Trans Currency</th>\n                    <td>{{ doc.currency }}</td>\n                </tr>\n                <tr>\n                    <th>Amount</th>\n                    <td>{{ doc.amount }}</td>\n                </tr>\n                <tr>\n                    <th>Amount In Words</th>\n                    <td>{{ doc.amount_in_words }}</td>\n                </tr>\n            </table>\n\n            <p><b>{{ _(\"A summary of the requisition details can be found on the ERP system: \") }}</b> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</p>\n            <p>You are kindly requested to see your manager for the next line of action.</p>\n\n            <p>Thank you.</p>\n        </div>\n\n        <div class=\"footer\">\n            <!-- Footer content here if applicable -->\n        </div>\n    </div>\n</body>\n</html>\n",
+ "modified": "2024-12-04 15:35:21.294814",
+ "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Approval Request",
  "owner": "Administrator",
  "recipients": [
   {
+   "condition": "",
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": ""
+  },
+  {
+   "condition": "",
+   "receiver_by_role": "Finance Manager"
+  },
+  {
+   "condition": "doc.requesting_department == \"Legal - 2CES\"",
+   "receiver_by_role": "Legal Manager"
+  },
+  {
+   "condition": "doc.requesting_department == \"Hr & Admin - 2CES\"",
+   "receiver_by_role": "HR Manager"
+  },
+  {
+   "condition": "doc.requesting_department == \"Procurement and Logistics - 2CES\"",
+   "receiver_by_role": "Procurement Manager"
+  },
+  {
+   "condition": "",
+   "receiver_by_role": "Production Manager"
+  },
+  {
+   "condition": "doc.requesting_department == \"Business Development - 2CES\"",
+   "receiver_by_role": "Sales Manager"
+  },
+  {
+   "condition": "doc.requesting_department == \"Legal - 2CES\"",
+   "receiver_by_role": "Legal Manager"
+  },
+  {
+   "condition": "doc.requesting_department == \"Corporate Communications - 2CES\"",
+   "receiver_by_role": "Corporate Communications Manager"
+  },
+  {
+   "condition": "doc.requesting_department == \"Finance - 2CES\"",
    "receiver_by_role": "Accounts Manager"
+  },
+  {
+   "condition": "doc.amount > 200000",
+   "receiver_by_role": "General Manager"
+  },
+  {
+   "condition": "doc.requesting_department == \"Project - 2CES\"",
+   "receiver_by_role": "Projects Manager"
   }
  ],
  "send_system_notification": 0,
  "send_to_all_assignees": 0,
- "subject": "Approval Request"
+ "subject": "Approval Request",
+ "value_changed": "workflow_state"
 }

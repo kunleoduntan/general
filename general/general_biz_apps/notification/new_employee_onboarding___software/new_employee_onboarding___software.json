@@ -1,0 +1,35 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2025-01-30 11:28:38.632951",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Employee Onboarding",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    \r\n    <style>\r\n        .container {\r\n            max-width: 600px;\r\n            margin: 0 auto;\r\n            padding: 20px;\r\n            border: 1px solid #ddd;\r\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n        }\r\n        .header, .footer {\r\n            text-align: center;\r\n        }\r\n        .content p {\r\n            color: black;\r\n            margin: 0 0 10px;\r\n        }\r\n        table {\r\n            width: 100%;\r\n            border-collapse: collapse;\r\n            margin: 20px 0;\r\n        }\r\n        table, th, td {\r\n            border: 1px solid #ddd;\r\n        }\r\n        th, td {\r\n            padding: 8px;\r\n            text-align: left;\r\n        }\r\n        th {\r\n            background-color: #00ffff;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div class=\"container\">\r\n        <div class=\"header\">\r\n            <!-- Header content here if applicable -->\r\n        </div>\r\n\r\n        <div class=\"content\">\r\n            <p>Greetings,</p>\r\n\r\n           <p>I hope this message finds you well. I am writing to formally submit this staffing request as detail\r\n            below {{doc.name}}.</p>\r\n\r\n            <table>\r\n                <tr>\r\n                    <th>Requisition ID</th>\r\n                    <td>{{ doc.name }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Beneficiary</th>\r\n                    <td>{{ doc.beneficiary }} or {{ doc.supplier_name }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Department</th>\r\n                    <td>{{ doc.requesting_department }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Purpose</th>\r\n                    <td>{{ doc.purpose }}</td>\r\n                </tr>\r\n                <tr>\r\n                    <th>Trans Currency</th>\r\n                    <td>{{ doc.currency }}</td>\r\n                </tr>\r\n            \r\n            \r\n                <tr>\r\n                    <th>Amount</th>\r\n                    <td>{{ frappe.format_value(doc.amount, {\"fieldtype\": \"Currency\", \"options\": doc.currency}) }}</td>\r\n                </tr>\r\n                \r\n                <tr>\r\n                    <th>Amount In Words</th>\r\n                    <td>{{ doc.amount_in_words }}</td>\r\n                </tr>\r\n                \r\n                 <tr>\r\n                    <th>Reason for rejection</th>\r\n                    <td>{{ doc.reason_for_rejection }}</td>\r\n                </tr>\r\n            </table>\r\n\r\n            <p><b>{{ _(\"A summary of the requisition details can be found on the ERP system: \") }}</b> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</p>\r\n            <p>You are kindly requested to see your manager for the next line of action.</p>\r\n\r\n            <p>Thank you.</p>\r\n        </div>\r\n\r\n        <div class=\"footer\">\r\n            <!-- Footer content here if applicable -->\r\n        </div>\r\n    </div>\r\n</body>\r\n</html>\r\n",
+ "modified": "2025-01-30 11:38:54.280546",
+ "modified_by": "Administrator",
+ "module": "General Biz Apps",
+ "name": "New employee Onboarding - Software",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": "HR User"
+  },
+  {
+   "condition": "doc.department == \" System Integration - 2CES\"",
+   "receiver_by_role": "IT Manager"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Notifications",
+ "sender_email": "no-reply@21st-evolution.ng",
+ "subject": "Onboarding {{doc.employee_name}}"
+}

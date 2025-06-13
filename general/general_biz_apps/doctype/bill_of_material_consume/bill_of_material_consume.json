@@ -10,18 +10,22 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "service_code",
+  "project_code",
+  "project_name",
   "naming_series",
   "column_break_ftvz",
-  "service_name",
+  "client_name",
   "external_ref",
   "column_break_s47f",
   "price_basis",
   "title",
   "materials_section",
   "items",
+  "amended_from",
+  "details_section",
   "cost_of_materials",
-  "amended_from"
+  "column_break_gov7",
+  "remark"
  ],
  "fields": [
   {
@@ -48,30 +52,6 @@
   {
    "fieldname": "column_break_ftvz",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "service_code",
-   "fieldtype": "Link",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Service Code",
-   "options": "Item",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
-   "fetch_from": "service_code.item_name",
-   "fieldname": "service_name",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Service Name"
   },
   {
    "fieldname": "column_break_s47f",
@@ -114,11 +94,58 @@
    "fieldtype": "Data",
    "label": "External Ref",
    "reqd": 1
+  },
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project Code",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "project_code.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project Name"
+  },
+  {
+   "fetch_from": "project_code.custom_customer_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gov7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-02 14:26:09.594119",
+ "modified": "2024-08-02 08:27:13.172962",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Bill of Material Consume",
@@ -138,12 +165,12 @@
    "write": 1
   }
  ],
- "search_fields": "service_name",
+ "search_fields": "project_name",
  "show_preview_popup": 1,
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "service_name",
+ "title_field": "project_name",
  "track_changes": 1
 }

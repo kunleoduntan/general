@@ -74,6 +74,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Total Inflow",
+   "precision": "2",
    "read_only": 1
   },
   {
@@ -184,7 +185,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-18 04:55:40.862823",
+ "modified": "2024-09-02 11:00:32.872262",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Batch Bank Transaction",

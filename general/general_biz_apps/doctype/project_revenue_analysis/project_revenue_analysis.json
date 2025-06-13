@@ -13,14 +13,16 @@
   "column_break_5vi2",
   "end_date",
   "project_type",
+  "title",
   "column_break_cikj",
   "description",
+  "deferred_cost_account",
   "column_break_h2rx",
   "apply_global_percentage",
   "global_percentage",
   "naming_series",
   "deferred_revenue_account",
-  "title",
+  "cost_basis",
   "process_recognition",
   "project_revenue_and_cost_detail_section",
   "project_analysis",
@@ -31,7 +33,8 @@
   "column_break_cfdw",
   "profit",
   "column_break_0n9n",
-  "average_margin"
+  "average_margin",
+  "amended_from"
  ],
  "fields": [
   {
@@ -171,11 +174,37 @@
    "fieldname": "description",
    "fieldtype": "Small Text",
    "label": "Description"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Revenue Analysis",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "deferred_cost_account",
+   "fieldtype": "Link",
+   "label": "Deferred Cost Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "cost_basis",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cost Basis",
+   "options": "Estimated Cost\nActual Cost",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-07-14 05:56:54.103099",
+ "modified": "2024-09-09 20:11:36.354350",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Project Revenue Analysis",

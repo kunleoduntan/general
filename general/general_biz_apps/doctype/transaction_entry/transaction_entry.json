@@ -26,6 +26,7 @@
   "inflow",
   "column_break_7mtl",
   "outflow",
+  "supplier_nam",
   "foreign_currency_section",
   "amount_in_fc",
   "column_break_jrt2",
@@ -104,7 +105,8 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Amount"
+   "label": "Amount",
+   "precision": "2"
   },
   {
    "fieldname": "inflow",
@@ -113,7 +115,8 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Inflow"
+   "label": "Inflow",
+   "precision": "2"
   },
   {
    "fieldname": "column_break_9fa1z",
@@ -122,7 +125,8 @@
   {
    "fieldname": "outflow",
    "fieldtype": "Float",
-   "label": "Outflow"
+   "label": "Outflow",
+   "precision": "2"
   },
   {
    "fieldname": "remark",
@@ -131,7 +135,8 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Transaction Description"
+   "label": "Transaction Description",
+   "reqd": 1
   },
   {
    "default": "1",
@@ -280,7 +285,8 @@
    "fieldname": "amount_in_fc",
    "fieldtype": "Float",
    "label": "Amount In FC",
-   "options": "currency"
+   "options": "currency",
+   "precision": "2"
   },
   {
    "depends_on": "amortise",
@@ -414,17 +420,27 @@
    "fieldname": "balance",
    "fieldtype": "Float",
    "label": "Balance",
+   "precision": "2",
    "read_only": 1
   },
   {
    "fieldname": "column_break_ki86",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier_nam",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-18 20:06:16.419380",
+ "modified": "2024-09-02 13:39:33.357380",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Transaction Entry",
