@@ -22,9 +22,13 @@
   "mobile_tel",
   "column_break_6wdg",
   "note",
+<<<<<<< HEAD
   "title",
   "contract_value",
   "currency"
+=======
+  "title"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  ],
  "fields": [
   {
@@ -130,6 +134,7 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Title"
+<<<<<<< HEAD
   },
   {
    "fieldname": "contract_value",
@@ -141,12 +146,18 @@
    "fieldtype": "Link",
    "label": "Currency",
    "options": "Currency"
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2025-02-22 14:21:56.909161",
+=======
+ "modified": "2024-11-08 16:02:18.009649",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Supplier Service List",

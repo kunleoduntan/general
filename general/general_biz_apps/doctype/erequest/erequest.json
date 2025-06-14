@@ -4,13 +4,20 @@
  "allow_rename": 1,
  "autoname": "naming_series:",
  "color": "Yellow",
+<<<<<<< HEAD
  "creation": "2024-10-04 21:51:41.444270",
+=======
+ "creation": "2023-12-23 09:50:37.811760",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+<<<<<<< HEAD
   "request_detail_section",
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "naming_series",
   "date",
   "request_type",
@@ -25,6 +32,7 @@
   "currency",
   "amount",
   "expense_account",
+<<<<<<< HEAD
   "reason_for_rejection",
   "column_break_hagd",
   "company",
@@ -46,6 +54,24 @@
   "bank_name",
   "column_break_peyx",
   "column_break_mwov",
+=======
+  "column_break_hagd",
+  "company",
+  "status",
+  "state_of_document",
+  "amount_in_words",
+  "title",
+  "dimension_section",
+  "cost_center",
+  "service_center",
+  "column_break_tsj8",
+  "branch",
+  "column_break_ybja",
+  "department",
+  "column_break_ikpc",
+  "project",
+  "project_name",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "list_of_invoices_section",
   "get_unpaid_invoices",
   "outstanding_purchase_invoices",
@@ -55,12 +81,15 @@
  ],
  "fields": [
   {
+<<<<<<< HEAD
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Naming Series"
   },
   {
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "fieldname": "date",
    "fieldtype": "Date",
    "in_filter": 1,
@@ -137,6 +166,7 @@
    "mandatory_depends_on": "eval: doc.request_type == 'Purchases'"
   },
   {
+<<<<<<< HEAD
    "depends_on": "eval: doc.request_type == 'Purchases'\r\n",
    "fieldname": "unit_price",
    "fieldtype": "Currency",
@@ -144,6 +174,8 @@
    "mandatory_depends_on": "eval: doc.request_type == 'Purchases'"
   },
   {
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "fieldname": "column_break_plr7",
    "fieldtype": "Column Break"
   },
@@ -156,7 +188,11 @@
   },
   {
    "fieldname": "amount",
+<<<<<<< HEAD
    "fieldtype": "Float",
+=======
+   "fieldtype": "Currency",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
@@ -165,6 +201,7 @@
    "read_only_depends_on": "eval: doc.request_type == \"Supplier Payment\" || doc.request_type == \"Purchases\" "
   },
   {
+<<<<<<< HEAD
    "depends_on": "eval:doc.workflow_state == 'Pending Finance Mgr Approval'",
    "fieldname": "expense_account",
    "fieldtype": "Link",
@@ -172,10 +209,13 @@
    "options": "Account"
   },
   {
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "fieldname": "column_break_hagd",
    "fieldtype": "Column Break"
   },
   {
+<<<<<<< HEAD
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
@@ -185,14 +225,23 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "hidden": 1,
+=======
+   "fieldname": "status",
+   "fieldtype": "Select",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "label": "Status",
    "options": "\nApproved for Payment\nApproved for Purchases\nApproved and Keep in View\nApproval Pending"
   },
   {
    "fieldname": "amount_in_words",
+<<<<<<< HEAD
    "fieldtype": "Small Text",
    "label": "Amount In Words",
    "max_height": "105px"
+=======
+   "fieldtype": "Data",
+   "label": "Amount In Words"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   },
   {
    "fieldname": "title",
@@ -207,6 +256,7 @@
    "label": "Finance & Dimension"
   },
   {
+<<<<<<< HEAD
    "fieldname": "branch",
    "fieldtype": "Link",
    "label": "Branch",
@@ -217,6 +267,8 @@
    "fieldtype": "Column Break"
   },
   {
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "fieldname": "cost_center",
    "fieldtype": "Link",
    "label": "Cost Center",
@@ -224,10 +276,18 @@
    "options": "Cost Center"
   },
   {
+<<<<<<< HEAD
+=======
+   "fieldname": "column_break_tsj8",
+   "fieldtype": "Column Break"
+  },
+  {
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "fieldname": "column_break_ybja",
    "fieldtype": "Column Break"
   },
   {
+<<<<<<< HEAD
    "fieldname": "requesting_department",
    "fieldtype": "Link",
    "label": "Department",
@@ -250,6 +310,8 @@
    "label": "Project Name"
   },
   {
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "depends_on": "eval: doc.request_type == 'Supplier Payment'",
    "fieldname": "list_of_invoices_section",
    "fieldtype": "Section Break",
@@ -257,11 +319,14 @@
    "read_only_depends_on": "eval: doc.request_type == 'Supplier Payment'"
   },
   {
+<<<<<<< HEAD
    "fieldname": "get_unpaid_invoices",
    "fieldtype": "Button",
    "label": "Get Unpaid Invoices"
   },
   {
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "depends_on": "eval: doc.request_type == 'Supplier Payment'",
    "fieldname": "outstanding_purchase_invoices",
    "fieldtype": "Table",
@@ -269,15 +334,71 @@
    "options": "Outstanding Purchase Invoices"
   },
   {
+<<<<<<< HEAD
+=======
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "eRequest",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "eRequest",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Expense Account",
+   "options": "Account"
+  },
+  {
+   "depends_on": "eval: doc.request_type == 'Purchases'\r\n",
+   "fieldname": "unit_price",
+   "fieldtype": "Currency",
+   "label": "Unit Price",
+   "mandatory_depends_on": "eval: doc.request_type == 'Purchases'"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "get_unpaid_invoices",
+   "fieldtype": "Button",
+   "label": "Get Unpaid Invoices"
+  },
+  {
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "fieldname": "amount_to_pay",
    "fieldtype": "Currency",
    "label": "Amount to pay",
    "read_only": 1
   },
   {
+<<<<<<< HEAD
+<<<<<<<< HEAD:general/general_biz_apps/doctype/erequest/erequest.json
    "fieldname": "request_by",
    "fieldtype": "Data",
    "label": "Request By"
+========
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series"
+<<<<<<< HEAD
+>>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92:general/general_biz_apps/doctype/payment_and_purchase_request/payment_and_purchase_request.json
   },
   {
    "fieldname": "amended_from",
@@ -331,18 +452,84 @@
    "options": "Bank"
   },
   {
+<<<<<<<< HEAD:general/general_biz_apps/doctype/erequest/erequest.json
    "fieldname": "column_break_peyx",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "column_break_mwov",
    "fieldtype": "Column Break"
+========
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+=======
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_ikpc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Branch",
+   "read_only_depends_on": "cost_center"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
+  },
+  {
+   "fieldname": "request_by",
+   "fieldtype": "Data",
+   "label": "Request By"
+<<<<<<< HEAD
+>>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92:general/general_biz_apps/doctype/payment_and_purchase_request/payment_and_purchase_request.json
+=======
+  },
+  {
+   "fieldname": "state_of_document",
+   "fieldtype": "Data",
+   "label": "State of Document"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "service_center",
+   "fieldtype": "Link",
+   "label": "Service Center",
+   "options": "Service Center",
+   "read_only_depends_on": "cost_center"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
+<<<<<<< HEAD
+<<<<<<<< HEAD:general/general_biz_apps/doctype/erequest/erequest.json
  "modified": "2025-03-14 10:12:08.932976",
+========
+ "modified": "2024-08-13 08:08:04.649956",
+>>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92:general/general_biz_apps/doctype/payment_and_purchase_request/payment_and_purchase_request.json
+=======
+ "modified": "2024-10-05 19:19:13.008242",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "eRequest",
@@ -359,6 +546,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+<<<<<<< HEAD
    "submit": 1,
    "write": 1
   },
@@ -373,6 +561,8 @@
    "role": "All",
    "share": 1,
    "submit": 1,
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "write": 1
   }
  ],

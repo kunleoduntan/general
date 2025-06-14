@@ -185,7 +185,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-09-02 11:00:32.872262",
+=======
+ "modified": "2024-11-22 06:53:02.876127",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Batch Bank Transaction",
@@ -217,6 +221,7 @@
    "report": 1,
    "role": "Accounts Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {
@@ -229,6 +234,20 @@
    "report": 1,
    "role": "Accounts User",
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Finance Manager",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

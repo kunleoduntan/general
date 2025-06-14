@@ -9,30 +9,24 @@
  "field_order": [
   "posting_date",
   "debit_amount",
-  "credit_amount",
   "column_break_amfa",
-  "rec",
+  "credit_amount",
   "party",
-  "account",
-  "debit_amount_in_account_currency",
   "column_break_lbjr",
   "account_currency",
-  "credit_amount_in_account_currency",
+  "running_balance",
+  "rec",
   "column_break_zxyp",
   "debit_amount_in_transaction_currency",
   "credit_amount_in_transaction_currency",
   "section_break_iofx",
-  "against",
-  "pay_name",
-  "column_break_tmwn",
   "amount",
-  "voucher_no",
-  "column_break_ubtt",
+  "column_break_tmwn",
   "remarks",
+  "column_break_ubtt",
+  "voucher_no",
   "cheque_no",
-  "mode_of_payment",
   "column_break_zbiv",
-  "transaction_currency",
   "transaction_exchange_rate",
   "column_break_237s",
   "status",
@@ -45,11 +39,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Posting Date"
-  },
-  {
-   "fieldname": "account",
-   "fieldtype": "Data",
-   "label": "Account"
   },
   {
    "fieldname": "debit_amount",
@@ -74,29 +63,6 @@
    "options": "Currency"
   },
   {
-   "fieldname": "debit_amount_in_account_currency",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Deposit AC",
-   "options": "currency"
-  },
-  {
-   "fieldname": "credit_amount_in_account_currency",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Withdrawal AC",
-   "options": "currency"
-  },
-  {
-   "fieldname": "against",
-   "fieldtype": "Small Text",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Name"
-  },
-  {
    "fieldname": "voucher_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -109,13 +75,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Remarks"
-  },
-  {
-   "fieldname": "transaction_currency",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Transaction Currency"
   },
   {
    "fieldname": "debit_amount_in_transaction_currency",
@@ -136,7 +95,7 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Transaction Exchange Rate"
+   "label": "Exch Rate"
   },
   {
    "fieldname": "column_break_amfa",
@@ -188,11 +147,6 @@
    "label": "Amount"
   },
   {
-   "fieldname": "pay_name",
-   "fieldtype": "Data",
-   "label": "Pay Name"
-  },
-  {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -206,18 +160,18 @@
   {
    "fieldname": "party",
    "fieldtype": "Data",
-   "label": "Party"
+   "label": "Name"
   },
   {
-   "fieldname": "mode_of_payment",
+   "fieldname": "running_balance",
    "fieldtype": "Data",
-   "label": "Mode of Payment"
+   "label": "Running Balance"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-14 16:13:42.243576",
+ "modified": "2024-12-27 12:25:08.916093",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Bank Account Entry",

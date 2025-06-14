@@ -22,7 +22,11 @@
   "global_percentage",
   "naming_series",
   "deferred_revenue_account",
+<<<<<<< HEAD
   "cost_basis",
+=======
+  "deferred_cost_account",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "process_recognition",
   "project_revenue_and_cost_detail_section",
   "project_analysis",
@@ -189,6 +193,7 @@
    "fieldtype": "Link",
    "label": "Deferred Cost Account",
    "options": "Account"
+<<<<<<< HEAD
   },
   {
    "fieldname": "cost_basis",
@@ -199,12 +204,18 @@
    "label": "Cost Basis",
    "options": "Estimated Cost\nActual Cost",
    "reqd": 1
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-09-09 20:11:36.354350",
+=======
+ "modified": "2024-08-06 21:02:48.638145",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Project Revenue Analysis",

@@ -14,17 +14,25 @@
   "type_of_maintenance",
   "is_multiple_assets",
   "asset_code",
-  "asset_description",
+  "identification_number",
   "column_break_yuld",
+<<<<<<< HEAD
   "maintenance_detail",
   "priority",
   "supplier_id",
   "supplier_name",
+=======
+  "supplier_id",
+  "supplier_name",
+  "asset_description",
+  "priority",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "column_break_6bwr",
   "status",
   "days_until_next_service",
   "next_due_date",
   "last_repair_date",
+<<<<<<< HEAD
   "estimated_cost",
   "dimension_section",
   "requesting_department",
@@ -35,6 +43,19 @@
   "column_break_kprp",
   "project",
   "project_name",
+=======
+  "column_break_6s3o",
+  "estimated_cost",
+  "maintenance_detail",
+  "dimension_section",
+  "branch",
+  "column_break_cetw",
+  "cost_center",
+  "column_break_fn9e",
+  "requesting_department",
+  "column_break_kprp",
+  "project",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "section_break_i9ut",
   "items",
   "section_break_f7cd",
@@ -234,16 +255,30 @@
    "fieldtype": "Column Break"
   },
   {
+<<<<<<< HEAD
    "fetch_from": "requesting_department.department_name",
    "fieldname": "project_name",
    "fieldtype": "Data",
    "label": "Project Name"
+=======
+   "fieldname": "identification_number",
+   "fieldtype": "Data",
+   "label": "Identification Number"
+  },
+  {
+   "fieldname": "column_break_6s3o",
+   "fieldtype": "Column Break"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-10-05 17:00:51.993665",
+=======
+ "modified": "2024-09-25 14:17:22.156063",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Maintenance Request",

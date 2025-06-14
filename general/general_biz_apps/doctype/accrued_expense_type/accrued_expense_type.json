@@ -1,24 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:accrued_expense_name",
  "creation": "2024-07-10 10:21:08.132634",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
   "payable_to",
   "accrued_expense_name",
+  "is_amortizable",
+  "title",
   "column_break_bpis",
   "dr_account",
+  "deferred_expense_account",
   "cr_account",
   "column_break_oqcj",
   "description",
   "is_shared_cost",
-  "gross_amount",
-  "is_amortizable"
+  "gross_amount"
  ],
  "fields": [
   {
@@ -30,9 +30,6 @@
   {
    "fieldname": "accrued_expense_name",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Accrued Expense Name",
    "reqd": 1,
    "unique": 1
@@ -44,8 +41,14 @@
   {
    "fieldname": "description",
    "fieldtype": "Small Text",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Description",
-   "reqd": 1
+   "max_height": "100px",
+   "read_only": 1,
+   "reqd": 1,
+   "width": "300px"
   },
   {
    "fieldname": "dr_account",
@@ -54,7 +57,7 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Dr Account",
+   "label": "Dr Account (Expense)",
    "mandatory_depends_on": "accrued_expense_name",
    "options": "Account",
    "reqd": 1
@@ -66,7 +69,7 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Cr Account",
+   "label": "Cr Account (Liability)",
    "options": "Account",
    "reqd": 1
   },
@@ -100,15 +103,28 @@
    "fieldname": "is_amortizable",
    "fieldtype": "Check",
    "label": "Is Amortizable"
+  },
+  {
+   "depends_on": "is_amortizable",
+   "fieldname": "deferred_expense_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Deferred Expense Account",
+   "mandatory_depends_on": "is_amortizable",
+   "options": "Account"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-08-08 09:45:31.625677",
+=======
+ "modified": "2024-11-23 07:32:12.739904",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Accrued Expense Type",
- "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

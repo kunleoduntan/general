@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
  "custom_fields": [
   {
    "_assign": null,
@@ -245,6 +246,9 @@
    "width": null
   }
  ],
+=======
+ "custom_fields": [],
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "custom_perms": [
   {
    "_assign": null,
@@ -617,6 +621,7 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+<<<<<<< HEAD
    "creation": "2025-06-09 15:49:19.974400",
    "default_value": null,
    "doc_type": "Customer",
@@ -640,6 +645,8 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "creation": "2025-01-28 15:26:54.454755",
    "default_value": null,
    "doc_type": "Customer",

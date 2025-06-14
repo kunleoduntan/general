@@ -38,18 +38,24 @@
    "fetch_from": "supplier_code.supplier_name",
    "fieldname": "supplier_name",
    "fieldtype": "Data",
+<<<<<<< HEAD
    "in_filter": 1,
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "label": "Supplier Name"
   },
   {
    "fieldname": "supplier_code",
    "fieldtype": "Link",
+<<<<<<< HEAD
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "label": "Supplier Code",
    "options": "Supplier"
   },
@@ -60,9 +66,12 @@
   {
    "fieldname": "service_name",
    "fieldtype": "Data",
+<<<<<<< HEAD
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "label": "Service Name"
   },
   {
@@ -101,17 +110,23 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
+<<<<<<< HEAD
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "label": "Email"
   },
   {
    "fieldname": "mobile_tel",
    "fieldtype": "Phone",
+<<<<<<< HEAD
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "label": "Mobile Tel"
   },
   {
@@ -131,7 +146,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2025-02-22 15:55:32.918131",
+=======
+ "modified": "2024-12-05 15:50:00.991854",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Supplier Services",

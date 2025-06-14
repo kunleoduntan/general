@@ -45,12 +45,11 @@
   "amortize",
   "is_processed",
   "accounting_dimension_section",
-  "branch",
-  "column_break_f1e4",
   "cost_center",
-  "column_break_njhs",
-  "project",
+  "column_break_f1e4",
+  "branch",
   "column_break_1dcw",
+  "project",
   "project_name"
  ],
  "fields": [
@@ -136,7 +135,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Frequency",
-   "options": "\nMonthly\nWeekly\nQuarterly\nHalf-Yearly\nYearly"
+   "options": "\nMonthly\nWeekly\nQuarterly\nHalf-Yearly\nYearly\nNA"
   },
   {
    "fieldname": "no_of_periods",
@@ -296,8 +295,9 @@
   {
    "fieldname": "branch",
    "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch"
+   "label": "Region",
+   "options": "Branch",
+   "read_only_depends_on": "cost_center"
   },
   {
    "fieldname": "column_break_f1e4",
@@ -308,10 +308,6 @@
    "fieldtype": "Link",
    "label": "Cost Center",
    "options": "Cost Center"
-  },
-  {
-   "fieldname": "column_break_njhs",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "project",
@@ -343,7 +339,11 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-08-24 22:26:19.769920",
+=======
+ "modified": "2024-11-18 19:15:13.016336",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Recur Entry",

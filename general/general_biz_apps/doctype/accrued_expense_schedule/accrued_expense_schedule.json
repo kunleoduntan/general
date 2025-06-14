@@ -6,6 +6,10 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+<<<<<<< HEAD
+=======
+  "accrued_expense_type",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "payable_to",
   "frequency",
   "next_posting_date",
@@ -13,12 +17,19 @@
   "posting_date",
   "start_date",
   "no_of_periods",
+<<<<<<< HEAD
   "next_schedule",
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "column_break_td1r",
   "trans_type",
   "option",
   "column_break_bcqp",
+<<<<<<< HEAD
   "accrued_expense_type",
+=======
+  "next_schedule",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "end_date",
   "title",
   "detail_section",
@@ -83,7 +94,8 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Start Date"
+   "label": "Start Date",
+   "read_only": 1
   },
   {
    "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
@@ -94,6 +106,10 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "End Date",
+<<<<<<< HEAD
+=======
+   "read_only": 1,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "read_only_depends_on": "frequency"
   },
   {
@@ -125,7 +141,10 @@
    "in_standard_filter": 1,
    "label": "Gross Amount",
    "non_negative": 1,
+<<<<<<< HEAD
    "precision": "2",
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "reqd": 1
   },
   {
@@ -298,9 +317,15 @@
    "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "fieldname": "no_of_periods",
    "fieldtype": "Int",
+<<<<<<< HEAD
    "label": "No of Months",
    "mandatory_depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
    "read_only_depends_on": "eval: doc.frequency != 'Freehand'"
+=======
+   "label": "No of Periods",
+   "mandatory_depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
+   "read_only_depends_on": "eval: doc.frequency != 'Freehand' || doc.frequency == 'Monthly'"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   },
   {
    "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
@@ -339,6 +364,10 @@
   },
   {
    "depends_on": "eval: doc.trans_type == 'ACCRUAL & PREPAY'",
+<<<<<<< HEAD
+=======
+   "fetch_from": "accrued_expense_type.deferred_expense_account",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "fieldname": "deferred_expense_account",
    "fieldtype": "Link",
    "label": "Deferred Expense Acct",
@@ -347,6 +376,7 @@
   },
   {
    "depends_on": "frequency",
+   "fetch_from": "accrued_expense_type.description",
    "fieldname": "description",
    "fieldtype": "Small Text",
    "in_list_view": 1,
@@ -388,7 +418,11 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-10-08 04:14:32.939331",
+=======
+ "modified": "2024-11-23 07:47:23.554254",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Accrued Expense Schedule",

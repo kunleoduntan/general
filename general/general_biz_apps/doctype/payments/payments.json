@@ -11,6 +11,7 @@
  "field_order": [
   "transaction_detail_section",
   "transaction_date",
+  "title",
   "column_break_a3gqx",
   "trans_type",
   "column_break_7fq6f",
@@ -32,15 +33,23 @@
   "column_break_jjdb",
   "is_related_coy_trans",
   "accounting_and_dimension",
+<<<<<<< HEAD
   "branch",
   "nature_of_expense",
   "column_break_stmx",
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "cost_center",
+  "column_break_stmx",
+  "branch",
   "column_break_xwvb",
   "department",
   "column_break_d3fe",
   "project",
+<<<<<<< HEAD
   "column_break_a0ha",
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "project_name",
   "section_break_icvsx",
   "payment_currency",
@@ -51,15 +60,22 @@
   "column_break_se8x",
   "company",
   "column_break_kbrd",
+<<<<<<< HEAD
+=======
+  "create_accounting_entries",
+  "amortize",
+  "is_multi_line",
+  "is_shared_cost",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   "transactions_detail_section",
   "amount_paid",
   "amount_paid_in_fc",
   "mode_of_payment",
   "column_break_ynk5s",
+  "transaction_purposes",
+  "column_break_e1fvs",
   "reference_no",
   "account_to_debit",
-  "column_break_e1fvs",
-  "transaction_purposes",
   "column_break_wkuqa",
   "amount_in_words",
   "amortization_parameter_section",
@@ -107,7 +123,7 @@
   "name_of_approver",
   "column_break_uwdf",
   "app_date",
-  "accounting_tab",
+  "bank_detail_tab",
   "banking_detail_section",
   "remittance_bank",
   "remittance_bank_gl",
@@ -201,7 +217,11 @@
    "default": "1",
    "fieldname": "create_accounting_entries",
    "fieldtype": "Check",
+<<<<<<< HEAD
    "label": "Create Entries"
+=======
+   "label": "Create Accounting Entries"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   },
   {
    "fieldname": "column_break_ynk5s",
@@ -258,7 +278,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Cheque / Ref No",
-   "length": 8,
+   "length": 15,
    "mandatory_depends_on": "\r\n",
    "reqd": 1
   },
@@ -367,6 +387,7 @@
    "depends_on": "deduct_wht",
    "fieldname": "section_break_r9iee",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Withholding tax",
    "mandatory_depends_on": "deduct_wht"
   },
@@ -403,11 +424,6 @@
    "fieldtype": "Link",
    "label": "Issued By",
    "options": "User"
-  },
-  {
-   "fieldname": "accounting_tab",
-   "fieldtype": "Tab Break",
-   "label": "Accounting"
   },
   {
    "fieldname": "banking_detail_section",
@@ -458,16 +474,22 @@
    "label": "Beneficiary"
   },
   {
-   "depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\"",
+   "depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\" || doc.is_multi_line != 1",
    "description": "Enter Expense Ac. if payment is not amortised else enter Deferred Expense Account",
    "fieldname": "account_to_debit",
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Account To Debit",
+<<<<<<< HEAD
    "mandatory_depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\"",
    "options": "Account",
    "read_only_depends_on": "eval: doc.trans_type == \"Transfer Out\""
+=======
+   "mandatory_depends_on": "eval: doc.trans_type == \"Expense Payment\" || doc.trans_type == \"Transfer Out\" ",
+   "options": "Account",
+   "read_only_depends_on": "is_multi_line"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   },
   {
    "fieldname": "naming_series",
@@ -570,14 +592,6 @@
    "label": "Name of Approver"
   },
   {
-   "depends_on": "eval: doc.trans_type == \"Expense Payment\"",
-   "fieldname": "nature_of_expense",
-   "fieldtype": "Select",
-   "label": "Nature of Expense",
-   "mandatory_depends_on": "eval: doc.trans_type == \"Expense Payment\"",
-   "options": "\nInternal\nFor Customer"
-  },
-  {
    "fieldname": "department",
    "fieldtype": "Link",
    "label": "Department",
@@ -614,7 +628,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "collapsible": 1,
    "fieldname": "multi_line_transactions_section",
    "fieldtype": "Section Break",
    "label": "Multi Line Transactions"
@@ -627,6 +640,7 @@
   },
   {
    "default": "0",
+   "depends_on": "eval:doc.trans_type == 'Expense Payment'",
    "fieldname": "is_multi_line",
    "fieldtype": "Check",
    "label": "Is Multi Line"
@@ -656,6 +670,7 @@
   },
   {
    "default": "0",
+   "depends_on": "eval:doc.trans_type == 'Expense Payment'",
    "fieldname": "is_shared_cost",
    "fieldtype": "Check",
    "label": "Is Shared Cost"
@@ -673,10 +688,11 @@
    "read_only": 1
   },
   {
+   "fetch_from": "cost_center.region_name",
    "fieldname": "branch",
-   "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch"
+   "fieldtype": "Data",
+   "label": "Region",
+   "read_only_depends_on": "cost_center"
   },
   {
    "collapsible": 1,
@@ -697,10 +713,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_a0ha",
-   "fieldtype": "Column Break"
-  },
-  {
    "fetch_from": "project.project_name",
    "fieldname": "project_name",
    "fieldtype": "Data",
@@ -715,6 +727,7 @@
    "mandatory_depends_on": "payee_id"
   },
   {
+<<<<<<< HEAD
    "depends_on": "eval:doc.trans_type == \"Supplier Payment\"",
    "fieldname": "supplier_invoice_detail_section",
    "fieldtype": "Section Break",
@@ -799,12 +812,27 @@
   {
    "fieldname": "column_break_jjdb",
    "fieldtype": "Column Break"
+=======
+   "fieldname": "bank_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bank Detail"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2025-06-07 15:17:14.780763",
+=======
+ "modified": "2024-12-27 11:51:46.027307",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Payments",

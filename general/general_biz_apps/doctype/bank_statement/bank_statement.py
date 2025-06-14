@@ -1,4 +1,4 @@
-# Copyright (c) 2023, kunleadenuga and contributors
+# Copyright (c) 2024, kunleadenuga and contributors
 # For license information, please see license.txt
 
 # import frappe

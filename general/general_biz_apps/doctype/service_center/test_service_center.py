@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestHMOManager(FrappeTestCase):
+class TestServiceCenter(FrappeTestCase):
 	pass

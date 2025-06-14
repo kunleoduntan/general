@@ -513,7 +513,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 53,
+=======
+   "idx": 48,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -574,7 +578,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 54,
+=======
+   "idx": 50,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -635,7 +643,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 57,
+=======
+   "idx": 52,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -696,7 +708,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 58,
+=======
+   "idx": 54,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -757,7 +773,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 61,
+=======
+   "idx": 56,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -818,7 +838,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 62,
+=======
+   "idx": 58,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -879,7 +903,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 63,
+=======
+   "idx": 59,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -940,7 +968,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 51,
+=======
+   "idx": 47,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -1001,7 +1033,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 55,
+=======
+   "idx": 51,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -1062,7 +1098,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 59,
+=======
+   "idx": 55,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -1123,7 +1163,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 52,
+=======
+   "idx": 48,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -1184,7 +1228,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 56,
+=======
+   "idx": 52,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -1245,7 +1293,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 60,
+=======
+   "idx": 56,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -1306,7 +1358,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 64,
+=======
+   "idx": 60,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -1341,6 +1397,7 @@
    "translatable": 0,
    "unique": 0,
    "width": null
+<<<<<<< HEAD
   },
   {
    "_assign": null,
@@ -1402,6 +1459,8 @@
    "translatable": 0,
    "unique": 0,
    "width": null
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   }
  ],
  "custom_perms": [
@@ -1724,6 +1783,7 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+<<<<<<< HEAD
    "creation": "2024-12-18 12:01:07.563310",
    "default_value": null,
    "doc_type": "Project",
@@ -1863,6 +1923,9 @@
    "_liked_by": null,
    "_user_tags": null,
    "creation": "2024-10-22 19:17:48.918528",
+=======
+   "creation": "2024-08-19 11:52:19.812350",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "default_value": null,
    "doc_type": "Project",
    "docstatus": 0,
@@ -1870,7 +1933,11 @@
    "field_name": null,
    "idx": 0,
    "is_system_generated": 0,
+<<<<<<< HEAD
    "modified": "2024-10-22 19:17:48.918528",
+=======
+   "modified": "2024-08-19 11:52:19.812350",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "modified_by": "Administrator",
    "module": null,
    "name": "Project-main-field_order",
@@ -1878,6 +1945,7 @@
    "property": "field_order",
    "property_type": "Data",
    "row_name": null,
+<<<<<<< HEAD
    "value": "[\"workflow_state\", \"naming_series\", \"cltab\", \"loc_abr\", \"project_type\", \"location\", \"project_name\", \"custom_column_break_hwu1v\", \"percent_complete_method\", \"percent_complete\", \"project_template\", \"status\", \"is_active\", \"column_break_5\", \"expected_start_date\", \"expected_end_date\", \"priority\", \"department\", \"customer_details\", \"customer\", \"custom_column_break_guj22\", \"custom_customer_name\", \"column_break_14\", \"sales_order\", \"users_section\", \"users\", \"copied_from\", \"section_break0\", \"notes\", \"section_break_18\", \"actual_start_date\", \"actual_time\", \"column_break_20\", \"actual_end_date\", \"project_details\", \"estimated_costing\", \"total_costing_amount\", \"total_expense_claim\", \"custom_column_break_1egdb\", \"company\", \"total_purchase_cost\", \"custom_expense_via_payment\", \"total_sales_amount\", \"column_break_28\", \"total_billable_amount\", \"total_billed_amount\", \"total_consumed_material_cost\", \"cost_center\", \"custom_total_\", \"custom_total_revenue\", \"custom_income_recognised_to_date\", \"custom_unrecognized_income\", \"custom_column_break_bjz2t\", \"custom_total_cost\", \"custom_cost_recognized_to_date\", \"custom_unrecognized_cost\", \"custom_column_break_fl3ia\", \"custom_gross_profit\", \"custom_profit_to_date\", \"custom_unrecognized_profit\", \"custom_column_break_7ldlh\", \"custom_gross_profit_margin\", \"custom_total_percent_recognized\", \"custom_unrecognized_percentage\", \"margin\", \"gross_margin\", \"column_break_37\", \"per_gross_margin\", \"monitor_progress\", \"collect_progress\", \"holiday_list\", \"frequency\", \"from_time\", \"to_time\", \"first_email\", \"second_email\", \"daily_time_to_send\", \"day_to_send\", \"weekly_time_to_send\", \"column_break_45\", \"message\"]"
   },
   {
@@ -1994,6 +2062,9 @@
    "property_type": "Check",
    "row_name": null,
    "value": "1"
+=======
+   "value": "[\"naming_series\", \"project_name\", \"status\", \"project_type\", \"is_active\", \"custom_column_break_hwu1v\", \"percent_complete_method\", \"percent_complete\", \"project_template\", \"column_break_5\", \"expected_start_date\", \"expected_end_date\", \"priority\", \"department\", \"customer_details\", \"customer\", \"custom_column_break_guj22\", \"custom_customer_name\", \"column_break_14\", \"sales_order\", \"users_section\", \"users\", \"copied_from\", \"section_break0\", \"notes\", \"section_break_18\", \"actual_start_date\", \"actual_time\", \"column_break_20\", \"actual_end_date\", \"project_details\", \"estimated_costing\", \"total_costing_amount\", \"total_expense_claim\", \"custom_column_break_1egdb\", \"company\", \"total_purchase_cost\", \"custom_expense_via_payment\", \"total_sales_amount\", \"column_break_28\", \"total_billable_amount\", \"total_billed_amount\", \"total_consumed_material_cost\", \"cost_center\", \"custom_total_\", \"custom_total_revenue\", \"custom_income_recognised_to_date\", \"custom_unrecognized_income\", \"custom_column_break_bjz2t\", \"custom_total_cost\", \"custom_cost_recognized_to_date\", \"custom_unrecognized_cost\", \"custom_column_break_fl3ia\", \"custom_gross_profit\", \"custom_profit_to_date\", \"custom_unrecognized_profit\", \"custom_column_break_7ldlh\", \"custom_gross_profit_margin\", \"custom_total_percent_recognized\", \"custom_unrecognized_percentage\", \"margin\", \"gross_margin\", \"column_break_37\", \"per_gross_margin\", \"monitor_progress\", \"collect_progress\", \"holiday_list\", \"frequency\", \"from_time\", \"to_time\", \"first_email\", \"second_email\", \"daily_time_to_send\", \"day_to_send\", \"weekly_time_to_send\", \"column_break_45\", \"message\"]"
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   },
   {
    "_assign": null,

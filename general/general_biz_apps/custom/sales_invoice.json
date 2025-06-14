@@ -1916,7 +1916,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 229,
+=======
+   "idx": 184,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -1977,7 +1981,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 69,
+=======
+   "idx": 65,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2038,7 +2046,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 233,
+=======
+   "idx": 188,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2099,7 +2111,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 237,
+=======
+   "idx": 192,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2160,7 +2176,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 231,
+=======
+   "idx": 186,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2221,7 +2241,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 230,
+=======
+   "idx": 185,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2282,7 +2306,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 234,
+=======
+   "idx": 189,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2343,7 +2371,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 235,
+=======
+   "idx": 190,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2404,7 +2436,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 232,
+=======
+   "idx": 187,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2465,7 +2501,11 @@
    "hide_border": 0,
    "hide_days": 0,
    "hide_seconds": 0,
+<<<<<<< HEAD
    "idx": 236,
+=======
+   "idx": 191,
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "ignore_user_permissions": 0,
    "ignore_xss_filter": 0,
    "in_global_search": 0,
@@ -2500,6 +2540,7 @@
    "translatable": 0,
    "unique": 0,
    "width": null
+<<<<<<< HEAD
   },
   {
    "_assign": null,
@@ -2622,6 +2663,8 @@
    "translatable": 0,
    "unique": 0,
    "width": null
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
   }
  ],
  "custom_perms": [
@@ -2855,7 +2898,11 @@
    "is_child_table": 0,
    "link_doctype": "POS Invoice",
    "link_fieldname": "consolidated_invoice",
+<<<<<<< HEAD
    "modified": "2025-03-03 11:08:49.080785",
+=======
+   "modified": "2024-07-26 01:16:37.303902",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "modified_by": "Administrator",
    "name": "2d877a2bb5",
    "owner": "Administrator",
@@ -2872,6 +2919,7 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+<<<<<<< HEAD
    "creation": "2025-03-11 11:21:21.603690",
    "default_value": null,
    "doc_type": "Sales Invoice",
@@ -2919,6 +2967,9 @@
    "_liked_by": null,
    "_user_tags": null,
    "creation": "2025-01-28 15:26:54.851480",
+=======
+   "creation": "2024-08-17 16:03:52.542228",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "default_value": null,
    "doc_type": "Sales Invoice",
    "docstatus": 0,
@@ -2926,11 +2977,19 @@
    "field_name": "additional_discount_account",
    "idx": 0,
    "is_system_generated": 0,
+<<<<<<< HEAD
    "modified": "2025-01-28 15:26:54.851480",
    "modified_by": "adenle@21st-evolution.com",
    "module": null,
    "name": "Sales Invoice-additional_discount_account-mandatory_depends_on",
    "owner": "adenle@21st-evolution.com",
+=======
+   "modified": "2024-08-17 16:03:52.542228",
+   "modified_by": "Administrator",
+   "module": null,
+   "name": "Sales Invoice-additional_discount_account-mandatory_depends_on",
+   "owner": "Administrator",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "property": "mandatory_depends_on",
    "property_type": "Code",
    "row_name": null,
@@ -2941,7 +3000,11 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+<<<<<<< HEAD
    "creation": "2025-01-28 15:26:54.831071",
+=======
+   "creation": "2024-08-17 16:03:52.519759",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "default_value": null,
    "doc_type": "Sales Invoice",
    "docstatus": 0,
@@ -2949,11 +3012,19 @@
    "field_name": "additional_discount_account",
    "idx": 0,
    "is_system_generated": 0,
+<<<<<<< HEAD
    "modified": "2025-01-28 15:26:54.831071",
    "modified_by": "adenle@21st-evolution.com",
    "module": null,
    "name": "Sales Invoice-additional_discount_account-hidden",
    "owner": "adenle@21st-evolution.com",
+=======
+   "modified": "2024-08-17 16:03:52.519759",
+   "modified_by": "Administrator",
+   "module": null,
+   "name": "Sales Invoice-additional_discount_account-hidden",
+   "owner": "Administrator",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "property": "hidden",
    "property_type": "Check",
    "row_name": null,
@@ -2964,7 +3035,11 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+<<<<<<< HEAD
    "creation": "2025-01-28 15:26:54.679449",
+=======
+   "creation": "2024-08-17 16:03:52.354005",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "default_value": null,
    "doc_type": "Sales Invoice",
    "docstatus": 0,
@@ -2972,11 +3047,19 @@
    "field_name": "tax_id",
    "idx": 0,
    "is_system_generated": 0,
+<<<<<<< HEAD
    "modified": "2025-01-28 15:26:54.679449",
    "modified_by": "adenle@21st-evolution.com",
    "module": null,
    "name": "Sales Invoice-tax_id-print_hide",
    "owner": "adenle@21st-evolution.com",
+=======
+   "modified": "2024-08-17 16:03:52.354005",
+   "modified_by": "Administrator",
+   "module": null,
+   "name": "Sales Invoice-tax_id-print_hide",
+   "owner": "Administrator",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "property": "print_hide",
    "property_type": "Check",
    "row_name": null,
@@ -2987,7 +3070,11 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+<<<<<<< HEAD
    "creation": "2025-01-28 15:26:54.653064",
+=======
+   "creation": "2024-08-17 16:03:52.329064",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "default_value": null,
    "doc_type": "Sales Invoice",
    "docstatus": 0,
@@ -2995,11 +3082,19 @@
    "field_name": "tax_id",
    "idx": 0,
    "is_system_generated": 0,
+<<<<<<< HEAD
    "modified": "2025-01-28 15:26:54.653064",
    "modified_by": "adenle@21st-evolution.com",
    "module": null,
    "name": "Sales Invoice-tax_id-hidden",
    "owner": "adenle@21st-evolution.com",
+=======
+   "modified": "2024-08-17 16:03:52.329064",
+   "modified_by": "Administrator",
+   "module": null,
+   "name": "Sales Invoice-tax_id-hidden",
+   "owner": "Administrator",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "property": "hidden",
    "property_type": "Check",
    "row_name": null,
@@ -3010,6 +3105,7 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+<<<<<<< HEAD
    "creation": "2024-12-04 10:16:30.158890",
    "default_value": null,
    "doc_type": "Sales Invoice",
@@ -3401,6 +3497,8 @@
    "_comments": null,
    "_liked_by": null,
    "_user_tags": null,
+=======
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "creation": "2024-06-18 12:50:45.118822",
    "default_value": null,
    "doc_type": "Sales Invoice",

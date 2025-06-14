@@ -119,7 +119,18 @@
    "reqd": 1
   },
   {
+<<<<<<< HEAD
    "fetch_from": "prepared_by.full_name",
+=======
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "EXP-PAY-.YY.-.#####"
+  },
+  {
+   "fetch_from": "prepared_by.employee_name",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
    "fieldname": "employee_name",
    "fieldtype": "Data",
    "label": "Employee Name"
@@ -244,7 +255,11 @@
  "is_submittable": 1,
  "links": [],
  "make_attachments_public": 1,
+<<<<<<< HEAD
  "modified": "2025-03-01 13:18:22.198333",
+=======
+ "modified": "2024-12-10 12:10:44.645378",
+>>>>>>> daf7e7d7f35a89a434b6aa0098f0ad8e5d1a1c92
  "modified_by": "Administrator",
  "module": "church",
  "name": "Expense Batch",
@@ -252,6 +267,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -277,6 +294,8 @@
    "write": 1
   },
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -290,6 +309,8 @@
    "write": 1
   },
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

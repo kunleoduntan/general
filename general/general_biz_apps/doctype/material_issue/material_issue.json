@@ -31,14 +31,13 @@
   "purch_uom",
   "title",
   "accounting_dimention_section",
-  "branch",
-  "column_break_yhig",
   "cost_center",
-  "column_break_1p4k",
+  "branch",
+  "service_center",
+  "column_break_yhig",
   "warehouse",
-  "column_break_kxiq",
+  "column_break_1p4k",
   "project",
-  "column_break_qlek",
   "project_name"
  ],
  "fields": [
@@ -211,8 +210,9 @@
   {
    "fieldname": "branch",
    "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch"
+   "label": "Region",
+   "options": "Branch",
+   "read_only_depends_on": "cost_center"
   },
   {
    "fieldname": "column_break_yhig",
@@ -223,18 +223,10 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_kxiq",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "project",
    "fieldtype": "Link",
    "label": "Project",
    "options": "Project"
-  },
-  {
-   "fieldname": "column_break_qlek",
-   "fieldtype": "Column Break"
   },
   {
    "fetch_from": "project.project_name",
@@ -242,12 +234,19 @@
    "fieldtype": "Data",
    "label": "Project Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "service_center",
+   "fieldtype": "Link",
+   "label": "Service Center",
+   "options": "Service Center",
+   "read_only_depends_on": "cost_center"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-24 21:10:45.807279",
+ "modified": "2024-10-05 12:56:36.907704",
  "modified_by": "Administrator",
  "module": "General Biz Apps",
  "name": "Material Issue",
